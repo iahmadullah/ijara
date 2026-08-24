@@ -1,0 +1,39 @@
+:root{
+/* Brand — from the ijara CDC mark (green square + globe, orange ribbon) */
+--brand-green:#5ca701;--brand-green-light:#8cc63e;--brand-green-dark:#3f7401;
+--brand-orange:#ff872b;--brand-orange-dark:#e26a0d;--brand-gray:#949599;
+
+/* Core palette (extracted) */
+--color-white:#ffffff;--color-black:#000000;
+--palette-1:#ffffff;--palette-2:#090d10;--palette-3:#5ca701;--palette-4:#eef2f5;--palette-5:#dee7ed;
+--palette-6:#ff872b;--palette-7:#486d84;--palette-8:#bccfdb;--palette-9:#9bb8ca;
+
+/* Neutrals */
+--neutral-25:#f8f7fa;--neutral-50:#eae9f0;--neutral-100:#d8d7e1;--neutral-200:#c7c6d3;--neutral-300:#b6b4c4;
+--neutral-400:#a5a3b5;--neutral-500:#8c8a9b;--neutral-600:#737181;--neutral-700:#5a5867;--neutral-800:#403e4d;
+--neutral-900:#2a2933;--neutral-1000:#111016;
+
+/* Cool slate family — used for quiet surfaces, chips and secondary text */
+--slate-50:#f9fafb;--slate-100:#eef2f5;--slate-200:#dee7ed;--slate-300:#bccfdb;--slate-400:#9bb8ca;--slate-600:#486d84;--slate-900:#1b2932;
+
+/* Semantic aliases */
+--color-primary:var(--brand-orange);--color-primary-hover:var(--brand-orange-dark);
+--color-secondary:var(--brand-green);--color-secondary-hover:var(--brand-green-dark);
+--color-bg:var(--color-white);--color-bg-secondary:var(--palette-2);--surface-quiet:var(--slate-100);
+--surface-card:var(--color-white);--surface-card-inverse:var(--palette-2);--surface-sunken:var(--slate-50);
+--color-text:var(--neutral-900);--color-text-secondary:var(--slate-600);--color-text-tertiary:var(--neutral-500);
+--color-text-inverse:var(--color-white);--color-text-accent:var(--brand-orange);
+--color-border:var(--slate-100);--color-border-strong:var(--slate-200);--color-divider:#dadfe1;
+--color-link:var(--brand-orange);--color-link-hover:var(--brand-orange-dark);
+--color-focus:var(--brand-green);
+--color-success:var(--brand-green);--color-success-soft:#eef7e4;
+--color-warning:var(--brand-orange);--color-warning-soft:#fff2e6;
+--color-danger:#c0392b;--color-danger-soft:#fdeceb;
+--color-info:var(--slate-600);--color-info-soft:var(--slate-100);
+--fade-overlay:#11101680;
+
+/* Button roles */
+--button-primary-bg:var(--brand-orange);--button-primary-bg-hover:var(--brand-orange-dark);--button-primary-text:var(--color-white);
+--button-secondary-bg:var(--brand-green);--button-secondary-bg-hover:var(--brand-green-dark);--button-secondary-text:var(--color-white);
+--button-quiet-bg:var(--slate-100);--button-quiet-bg-hover:var(--slate-200);--button-quiet-text:var(--slate-600);
+}

@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/colors.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/typography.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/radius.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/motion.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/base.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/styles.css">
+<script src="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.470.0/dist/umd/lucide.js"></script>
+<style>
+  body { margin:0; background:var(--surface-sunken); font-family:Poppins,sans-serif; font-weight:500; color:var(--color-text); -webkit-font-smoothing:antialiased; }
+  a { color:var(--color-link); text-decoration:none; }
+  a:hover { color:var(--color-link-hover); }
+  @keyframes stepIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @keyframes checkPop { 0% { transform:scale(0.4); opacity:0; } 60% { transform:scale(1.12); opacity:1; } 100% { transform:scale(1); opacity:1; } }
+  .check-pop { animation:checkPop 420ms cubic-bezier(0.16,1,0.3,1) both; }
+  @keyframes settleDown { 0% { transform:translateY(-4px); opacity:0.6; } 60% { transform:translateY(2px); } 100% { transform:none; opacity:1; } }
+  .dot-done { animation:settleDown 320ms cubic-bezier(0.16,1,0.3,1) both; }
+  @keyframes pulseRing { 0% { box-shadow:0 0 0 0 rgba(255,255,255,0.45); } 70% { box-shadow:0 0 0 10px rgba(255,255,255,0); } 100% { box-shadow:0 0 0 0 rgba(255,255,255,0); } }
+  .stepwrap { animation:stepIn 320ms cubic-bezier(0.16,1,0.3,1) both; }
+  .dot-active { animation:pulseRing 1800ms cubic-bezier(0.4,0,0.2,1) infinite; }
+  .pane { scrollbar-width:thin; }
+  .pane::-webkit-scrollbar { width:6px; }
+  .pane::-webkit-scrollbar-thumb { background:var(--slate-200); border-radius:100px; }
+  .steprow { transition:opacity 200ms cubic-bezier(0.4,0,0.2,1); }
+  .opt { transition:background 200ms cubic-bezier(0.4,0,0.2,1), border-color 200ms cubic-bezier(0.4,0,0.2,1); }
+  .opt:hover { border-color:var(--brand-green-light); }
+  .fld { width:100%; box-sizing:border-box; padding:12px 14px; border-radius:12px; border:1px solid var(--color-border-strong); background:#fff; font-family:Poppins,sans-serif; font-size:14px; font-weight:500; color:var(--color-text); outline:none; }
+  .fld:focus { border-color:var(--brand-green); box-shadow:var(--ring-focus); }
+  .rng { -webkit-appearance:none; appearance:none; width:100%; height:20px; border-radius:100px; background:var(--slate-200); background-clip:content-box; padding:6px 0; box-sizing:border-box; overflow:visible; }
+  .rng::-webkit-slider-runnable-track { height:8px; border-radius:100px; background:transparent; }
+  .rng::-moz-range-track { height:8px; border-radius:100px; background:transparent; }
+  .rng::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; margin-top:-6px; position:relative; z-index:2; border-radius:100px; background:var(--brand-green-dark); border:3px solid #fff; box-shadow:var(--shadow-low); cursor:pointer; }
+  .rng::-moz-range-thumb { width:20px; height:20px; border-radius:100px; background:var(--brand-green-dark); border:3px solid #fff; cursor:pointer; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;padding:32px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px">
+
+  <div style="max-width:1440px;margin:0 auto;width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+    <a href="ijara%20CDC%20Website.dc.html" style="display:block"><img src="assets/ijara-cdc-logo.png" alt="ijara Community Development Corp." style="height:40px;width:auto;display:block"></a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="tel:+18778645272" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:var(--surface-card-inverse);color:#fff;font-size:13px;font-weight:600;white-space:nowrap"><i data-lucide="headset" stroke-width="1.75" style="width:14px;height:14px"></i>Talk to a specialist · (877) 864–5272</a>
+      <a href="ijara%20CDC%20Website.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-size:13px;font-weight:600"><i data-lucide="log-out" stroke-width="1.75" style="width:14px;height:14px"></i>Exit</a>
+    </div>
+  </div>
+
+  <div style="max-width: 1440px; margin: 0 auto; width: 100%; flex: none; height: clamp(620px,calc(100vh - 220px),900px); min-height: 0; border-radius: 32px; padding: 16px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; background: radial-gradient(120% 100% at 50% 0%,#8cc63e 0%,#5ca701 45%,#3f7401 100%)">
+
+    <div class="pane" style="flex:1 1 300px;min-width:0;max-width:380px;height:100%;min-height:0;overflow-y:auto;padding:32px 32px 32px 24px;box-sizing:border-box">
+      <h1 style="margin:0;font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff;text-wrap:pretty">Rent to Own Application Forms for Homes and Businesses</h1>
+      <div style="margin-top:16px;font-size:14px;color:rgba(255,255,255,0.85)">Prequalification · About 2 minutes</div>
+
+      <div style="margin-top:48px;display:flex;flex-direction:column">
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s1.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s1.dot }};box-shadow:{{ s1.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s1.label }}">Step 1</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s1.title }}">Country</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s2.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s2.dot }};box-shadow:{{ s2.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s2.label }}">Step 2</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s2.title }}">Goal</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s3.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s3.dot }};box-shadow:{{ s3.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s3.label }}">Step 3</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s3.title }}">Credit score</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s4.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s4.dot }};box-shadow:{{ s4.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s4.label }}">Step 4</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s4.title }}">Property details</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s5.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s5.dot }};box-shadow:{{ s5.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s5.label }}">Step 5</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s5.title }}">Finances</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s6.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s6.dot }};box-shadow:{{ s6.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s6.label }}">Step 6</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s6.title }}">Search &amp; timing</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span class="{{ s7.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s7.dot }};box-shadow:{{ s7.ring }};display:block"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,0.35);display:block"></span>
+          </div>
+          <div style="padding-bottom:24px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s7.label }}">Step 7</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s7.title }}">Your details</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px">
+          <div style="flex:none;display:flex;flex-direction:column;align-items:center">
+            <span class="{{ s8.cls }}" style="width:12px;height:12px;border-radius:100px;background:{{ s8.dot }};box-shadow:{{ s8.ring }};display:block"></span>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:{{ s8.label }}">Step 8</div>
+            <div style="margin-top:2px;font-size:16px;font-weight:600;color:{{ s8.title }}">Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1 1 480px;min-width:0;height:100%;min-height:0;border-radius:24px;background:#fff;padding:clamp(24px,4vw,48px);box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden">
+      <div class="pane" style="flex:1;min-height:0;overflow-y:auto;padding-right:8px">
+        <h2 style="margin:0;font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600">{{ heading }}</h2>
+        <p style="margin:16px 0 0;max-width:640px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">{{ subhead }}</p>
+
+        <div class="stepwrap" key="{{ step }}" style="margin-top:40px">
+          <sc-if value="{{ isCountry }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+              <button type="button" class="opt" onClick="{{ country0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ country0.bd }};background:{{ country0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ country0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ country0.rd }};display:block"></span></span>
+                <img src="https://flagcdn.com/w40/ca.png" alt="Canada" style="flex:none;width:24px;height:auto;border-radius:2px;display:block">
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Canada</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ country1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ country1.bd }};background:{{ country1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ country1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ country1.rd }};display:block"></span></span>
+                <img src="https://flagcdn.com/w40/us.png" alt="United States" style="flex:none;width:24px;height:auto;border-radius:2px;display:block">
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">United States</span>
+                </span>
+              </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isGoal }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ goal0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ goal0.bd }};background:{{ goal0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ goal0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ goal0.rd }};display:block"></span></span>
+                <i data-lucide="house" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Buy a home</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ goal1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ goal1.bd }};background:{{ goal1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ goal1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ goal1.rd }};display:block"></span></span>
+                <i data-lucide="refresh-cw" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">I already own one</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ goal2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ goal2.bd }};background:{{ goal2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ goal2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ goal2.rd }};display:block"></span></span>
+                <i data-lucide="building-2" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Commercial or business</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ goal3.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ goal3.bd }};background:{{ goal3.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ goal3.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ goal3.rd }};display:block"></span></span>
+                <i data-lucide="trees" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Land or construction</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ goal4.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ goal4.bd }};background:{{ goal4.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ goal4.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ goal4.rd }};display:block"></span></span>
+                <i data-lucide="trending-up" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Investment property</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ goal5.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ goal5.bd }};background:{{ goal5.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ goal5.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ goal5.rd }};display:block"></span></span>
+                <i data-lucide="handshake" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Partner broker</span>
+                </span>
+              </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isCredit }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ credit0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ credit0.bd }};background:{{ credit0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ credit0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ credit0.rd }};display:block"></span></span>
+                <i data-lucide="circle-slash" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">No credit</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ credit1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ credit1.bd }};background:{{ credit1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ credit1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ credit1.rd }};display:block"></span></span>
+                <i data-lucide="sprout" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Building credit</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ credit2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ credit2.bd }};background:{{ credit2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ credit2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ credit2.rd }};display:block"></span></span>
+                <i data-lucide="gauge" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Fair</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ credit3.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ credit3.bd }};background:{{ credit3.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ credit3.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ credit3.rd }};display:block"></span></span>
+                <i data-lucide="thumbs-up" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Good</span>
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ credit4.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ credit4.bd }};background:{{ credit4.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ credit4.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ credit4.rd }};display:block"></span></span>
+                <i data-lucide="award" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Excellent</span>
+                </span>
+              </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isProperty }}">
+            <div style="display:flex;flex-direction:column;gap:32px">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:600">Type of property</span>
+              </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ ptype0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ ptype0.bd }};background:{{ ptype0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ ptype0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ ptype0.rd }};display:block"></span></span>
+                <i data-lucide="house" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Single family</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ ptype1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ ptype1.bd }};background:{{ ptype1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ ptype1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ ptype1.rd }};display:block"></span></span>
+                <i data-lucide="building" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Condo / townhouse</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ ptype2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ ptype2.bd }};background:{{ ptype2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ ptype2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ ptype2.rd }};display:block"></span></span>
+                <i data-lucide="layers" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2 to 4 units</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ ptype3.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ ptype3.bd }};background:{{ ptype3.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ ptype3.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ ptype3.rd }};display:block"></span></span>
+                <i data-lucide="building-2" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Commercial</span>
+                  
+                </span>
+              </button>
+            </div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:600">How will it be used</span>
+              </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ puse0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ puse0.bd }};background:{{ puse0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ puse0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ puse0.rd }};display:block"></span></span>
+                <i data-lucide="home" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Primary residence</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ puse1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ puse1.bd }};background:{{ puse1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ puse1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ puse1.rd }};display:block"></span></span>
+                <i data-lucide="sun" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Vacation home</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ puse2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ puse2.bd }};background:{{ puse2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ puse2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ puse2.rd }};display:block"></span></span>
+                <i data-lucide="trending-up" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Investment</span>
+                  
+                </span>
+              </button>
+            </div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:600">Your residency status</span>
+              </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ pres0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ pres0.bd }};background:{{ pres0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ pres0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ pres0.rd }};display:block"></span></span>
+                <i data-lucide="flag" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Citizen</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ pres1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ pres1.bd }};background:{{ pres1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ pres1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ pres1.rd }};display:block"></span></span>
+                <i data-lucide="id-card" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Permanent resident</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ pres2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ pres2.bd }};background:{{ pres2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ pres2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ pres2.rd }};display:block"></span></span>
+                <i data-lucide="globe" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Foreign resident</span>
+                  
+                </span>
+              </button>
+            </div>
+            </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isFinances }}">
+            <div style="display:flex;flex-direction:column;gap:48px">
+              <div>
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px;font-weight:600">Purchase price</span></div>
+                <div style="margin-top:12px;font-size:32px;line-height:1.15;letter-spacing:-1.1px;font-weight:600">{{ priceLabel }}</div>
+                <input type="range" min="50000" max="5000000" step="10000" class="rng" value="{{ price }}" onInput="{{ onPrice }}" style="margin-top:16px;background:{{ priceTrack }}">
+                <div style="margin-top:8px;display:flex;justify-content:space-between;font-size:14px;color:var(--color-text-secondary)"><span>$50,000</span><span>$5M+</span></div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px;font-weight:600">Deposit toward purchase</span></div>
+                <div style="margin-top:12px;font-size:32px;line-height:1.15;letter-spacing:-1.1px;font-weight:600">{{ depositLabel }}</div>
+                <input type="range" min="0" max="2000000" step="5000" class="rng" value="{{ deposit }}" onInput="{{ onDeposit }}" style="margin-top:16px;background:{{ depositTrack }}">
+                <div style="margin-top:8px;display:flex;justify-content:space-between;font-size:14px;color:var(--color-text-secondary)"><span>$0</span><span>$2M+</span></div>
+              </div>
+              <div style="padding:16px 20px;border-radius:16px;background:var(--color-success-soft);display:flex;align-items:center;gap:8px;font-size:13px;color:var(--brand-green-dark)"><i data-lucide="info" stroke-width="1.75" style="width:15px;height:15px"></i>{{ depositNote }}</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isSearch }}">
+            <div style="display:flex;flex-direction:column;gap:32px">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:600">Where are you in the process?</span>
+              </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ stage0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ stage0.bd }};background:{{ stage0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ stage0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ stage0.rd }};display:block"></span></span>
+                <i data-lucide="search" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Just starting to look</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ stage1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ stage1.bd }};background:{{ stage1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ stage1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ stage1.rd }};display:block"></span></span>
+                <i data-lucide="map-pin" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">I’ve identified a home</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ stage2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ stage2.bd }};background:{{ stage2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ stage2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ stage2.rd }};display:block"></span></span>
+                <i data-lucide="file-text" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">I’ve made an offer</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ stage3.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ stage3.bd }};background:{{ stage3.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ stage3.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ stage3.rd }};display:block"></span></span>
+                <i data-lucide="circle-check" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">My offer was accepted</span>
+                  
+                </span>
+              </button>
+            </div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:600">How soon would you like to close?</span>
+              </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ closing0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ closing0.bd }};background:{{ closing0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ closing0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ closing0.rd }};display:block"></span></span>
+                <i data-lucide="clock" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Within 30 days</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ closing1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ closing1.bd }};background:{{ closing1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ closing1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ closing1.rd }};display:block"></span></span>
+                <i data-lucide="clock" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Within 90 days</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ closing2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ closing2.bd }};background:{{ closing2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ closing2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ closing2.rd }};display:block"></span></span>
+                <i data-lucide="clock" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Within 6 months</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ closing3.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ closing3.bd }};background:{{ closing3.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ closing3.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ closing3.rd }};display:block"></span></span>
+                <i data-lucide="clock" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Within 1 year</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ closing4.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ closing4.bd }};background:{{ closing4.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ closing4.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ closing4.rd }};display:block"></span></span>
+                <i data-lucide="clock" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">A year or more</span>
+                  
+                </span>
+              </button>
+            </div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:600">Working with a real estate agent?</span>
+              </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <button type="button" class="opt" onClick="{{ agent0.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ agent0.bd }};background:{{ agent0.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ agent0.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ agent0.rd }};display:block"></span></span>
+                <i data-lucide="circle-check" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Yes, I have one</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ agent1.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ agent1.bd }};background:{{ agent1.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ agent1.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ agent1.rd }};display:block"></span></span>
+                <i data-lucide="search" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">I’m looking for one</span>
+                  
+                </span>
+              </button>
+              <button type="button" class="opt" onClick="{{ agent2.on }}" style="height:56px;padding:0 16px;box-sizing:border-box;border-radius:14px;border:1px solid {{ agent2.bd }};background:{{ agent2.bg }};font-family:Poppins,sans-serif;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;overflow:hidden">
+                <span style="flex:none;width:18px;height:18px;border-radius:100px;border:2px solid {{ agent2.rb }};background:#fff;display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:100px;background:{{ agent2.rd }};display:block"></span></span>
+                <i data-lucide="circle-minus" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green-dark);flex:none"></i>
+                <span style="min-width:0;overflow:hidden">
+                  <span style="display:block;font-size:14px;font-weight:600;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Not yet</span>
+                  
+                </span>
+              </button>
+            </div>
+            </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isYou }}">
+            <div style="display:flex;flex-direction:column;gap:32px">
+              <div>
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px;font-weight:600">Your name</span></div>
+                <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">First name</span><input type="text" class="fld" value="{{ first }}" onInput="{{ onFirst }}" style="margin-top:8px"></label>
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">Last name</span><input type="text" class="fld" value="{{ last }}" onInput="{{ onLast }}" style="margin-top:8px"></label>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px;font-weight:600">Contact</span></div>
+                <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">Email</span><input type="email" class="fld" value="{{ email }}" onInput="{{ onEmail }}" style="margin-top:8px"></label>
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">Phone</span><input type="tel" class="fld" placeholder="(416) 555-1234" value="{{ phone }}" onInput="{{ onPhone }}" style="margin-top:8px"></label>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px;font-weight:600">Mailing address</span></div>
+                <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">City</span><input type="text" class="fld" value="{{ city }}" onInput="{{ onCity }}" style="margin-top:8px"></label>
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">State / Province</span><input type="text" class="fld" value="{{ region }}" onInput="{{ onRegion }}" style="margin-top:8px"></label>
+                  <label style="display:block"><span style="display:block;font-size:14px;font-weight:600;color:var(--color-text-secondary)">Postal code</span><input type="text" class="fld" value="{{ postal }}" onInput="{{ onPostal }}" style="margin-top:8px"></label>
+                </div>
+              </div>
+              <label style="display:flex;align-items:center;gap:12px;padding:16px 20px;border-radius:16px;background:var(--color-success-soft);cursor:pointer">
+                <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:18px;height:18px;accent-color:var(--brand-green)">
+                <span style="font-size:13px;line-height:1.45;color:var(--brand-green-dark)">I agree to a soft credit check. This will not affect my credit score.</span>
+              </label>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isReview }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="border-radius:16px;border:1px solid var(--color-border-strong);padding:24px 28px;background:var(--surface-sunken)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+                <span style="font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--brand-green-dark)">Goal</span>
+                <button type="button" onClick="{{ editGoal }}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;font-family:Poppins,sans-serif;font-size:13px;font-weight:600;color:var(--color-text);cursor:pointer">Edit</button>
+              </div>
+              <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Country</span><span style="font-weight:600">{{ v.country }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Goal</span><span style="font-weight:600">{{ v.goal }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Credit score</span><span style="font-weight:600">{{ v.credit }}</span></div>
+              </div>
+            </div>
+            <div style="border-radius:16px;border:1px solid var(--color-border-strong);padding:24px 28px;background:var(--surface-sunken)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+                <span style="font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--brand-green-dark)">Property</span>
+                <button type="button" onClick="{{ editProperty }}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;font-family:Poppins,sans-serif;font-size:13px;font-weight:600;color:var(--color-text);cursor:pointer">Edit</button>
+              </div>
+              <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Type</span><span style="font-weight:600">{{ v.ptype }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Use</span><span style="font-weight:600">{{ v.puse }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Residency</span><span style="font-weight:600">{{ v.pres }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Search stage</span><span style="font-weight:600">{{ v.stage }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Closing window</span><span style="font-weight:600">{{ v.closing }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Realtor</span><span style="font-weight:600">{{ v.agent }}</span></div>
+              </div>
+            </div>
+            <div style="border-radius:16px;border:1px solid var(--color-border-strong);padding:24px 28px;background:var(--surface-sunken)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+                <span style="font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--brand-green-dark)">Finances</span>
+                <button type="button" onClick="{{ editFinances }}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;font-family:Poppins,sans-serif;font-size:13px;font-weight:600;color:var(--color-text);cursor:pointer">Edit</button>
+              </div>
+              <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Purchase price</span><span style="font-weight:600">{{ priceLabel }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Deposit</span><span style="font-weight:600">{{ depositLabel }}</span></div>
+              </div>
+            </div>
+            <div style="border-radius:16px;border:1px solid var(--color-border-strong);padding:24px 28px;background:var(--surface-sunken)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+                <span style="font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--brand-green-dark)">You</span>
+                <button type="button" onClick="{{ editYou }}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;font-family:Poppins,sans-serif;font-size:13px;font-weight:600;color:var(--color-text);cursor:pointer">Edit</button>
+              </div>
+              <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Name</span><span style="font-weight:600">{{ v.name }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Email</span><span style="font-weight:600">{{ v.email }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Phone</span><span style="font-weight:600">{{ v.phone }}</span></div>
+                <div style="display:flex;gap:24px;font-size:15px"><span style="flex:0 0 180px;color:var(--color-text-secondary)">Address</span><span style="font-weight:600">{{ v.address }}</span></div>
+              </div>
+            </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isDone }}">
+            <div style="padding:72px 0;text-align:center">
+              <div class="check-pop" style="width:72px;height:72px;margin:0 auto;border-radius:100px;background:var(--color-success-soft);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="badge-check" stroke-width="1.75" style="width:32px;height:32px"></i></div>
+              <div style="margin-top:32px;font-size:32px;line-height:1.15;letter-spacing:-1.1px;font-weight:600">You’re all set</div>
+              <p style="margin:16px auto 0;max-width:520px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">A licensed specialist will review your application and come back to you by email within one business day. A copy of your answers is on its way to your inbox.</p>
+              <a href="ijara%20CDC%20Website.dc.html" style="margin-top:32px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-size:14px;font-weight:600"><i data-lucide="arrow-left" stroke-width="1.75" style="width:16px;height:16px"></i>Back to home</a>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+
+      <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:none;margin-top:32px;padding-top:24px;border-top:1px solid var(--color-border);display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+          <button type="button" onClick="{{ back }}" style="flex:none;width:38px;height:38px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--color-text);cursor:pointer"><i data-lucide="chevron-left" stroke-width="1.75" style="width:18px;height:18px"></i></button>
+          <button type="button" onClick="{{ next }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:none;border-radius:100px;background:var(--brand-green);color:#fff;font-family:Poppins,sans-serif;font-size:14px;font-weight:600;cursor:pointer">{{ nextLabel }}<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></button>
+          <span style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:16px;color:var(--color-text-secondary)"><i data-lucide="bookmark" stroke-width="1.75" style="width:16px;height:16px"></i>Save my progress</span>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="max-width:1440px;margin:0 auto;width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:14px;color:var(--color-text-secondary)">
+    <span>© 2026 ijara Community Development Corp.</span>
+    <span style="display:flex;gap:16px"><a href="#legal" style="color: var(--slate-600)">Privacy</a><a href="#legal" style="color: var(--slate-600)">Terms</a><a href="#legal" style="color: var(--slate-600)">Fatwa</a></span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+const STEPS = ['country','goal','credit','property','finances','search','you','review','done'];
+
+const HEADINGS = {
+  country: ["Where's the property?", 'Our programs differ between Canada and the US. Pick one to begin. About two minutes from here.'],
+  goal: ['What are you looking to do?', "Pick the closest match. We'll tailor the rest from here."],
+  credit: ['How is your credit?', 'An estimate is fine. No credit and low credit both have a program.'],
+  property: ['About the property', 'Three quick picks. This shapes which program fits.'],
+  finances: ['Your ballpark numbers', 'Estimates are fine. Drag the sliders to a range that feels right. Nothing here is binding.'],
+  search: ['Where are you in your search?', 'Three quick details so a specialist can prep before they call.'],
+  you: ['Your contact details', 'A licensed specialist will reach out by email within one business day. Your information is never sold or shared without your consent.'],
+  review: ['One last look', "Edit anything that needs tweaking. We'll only act on what you confirm here."],
+  done: ['', '']
+};
+
+class Component extends DCLogic {
+  state = {
+    step: 0,
+    country: '', goal: '', credit: '',
+    propType: '', propUse: '', residency: '',
+    price: 500000, deposit: 50000,
+    stage: '', closing: '', agent: '',
+    first: '', last: '', email: '', phone: '', city: '', region: '', postal: '', consent: false
+  };
+
+  componentDidMount() { this.icons(); }
+  componentDidUpdate() { this.icons(); }
+  icons(n = 0) {
+    if (window.lucide && window.lucide.createIcons) { try { window.lucide.createIcons(); } catch (e) {} return; }
+    if (n < 40) setTimeout(() => this.icons(n + 1), 150);
+  }
+
+  track(v, min, max) {
+    const k = Math.max(0, Math.min(100, (((parseFloat(v) || 0) - min) / (max - min)) * 100));
+    return 'linear-gradient(90deg, #8cc63e 0%, #5ca701 ' + (k * 0.6) + '%, #3f7401 ' + k + '%, var(--slate-200) ' + k + '%, var(--slate-200) 100%)';
+  }
+  money(v) { return '$' + Number(v || 0).toLocaleString('en-US'); }
+
+  set(k) { return (e) => this.setState({ [k]: e.target.value }); }
+  pick(k, v) { return () => this.setState({ [k]: v }); }
+
+  stepMeta(i) {
+    const cur = this.state.step;
+    const done = i < cur;
+    const active = i === cur;
+    return {
+      dot: done || active ? '#fff' : 'rgba(255,255,255,0.62)',
+      cls: active ? 'dot-active' : done ? 'dot-done' : '',
+      ring: active ? '0 0 0 4px rgba(255,255,255,0.3)' : 'none',
+      label: active || done ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.8)',
+      title: active || done ? '#fff' : 'rgba(255,255,255,0.8)'
+    };
+  }
+
+  optSet(prefix, stateKey, labels) {
+    const out = {};
+    labels.forEach((label, i) => {
+      const on = this.state[stateKey] === label;
+      out[prefix + i] = {
+        on: this.pick(stateKey, label),
+        bd: on ? 'var(--brand-green)' : 'var(--color-border-strong)',
+        bg: on ? 'var(--color-success-soft)' : '#fff',
+        rb: on ? 'var(--brand-green)' : 'var(--color-border-strong)',
+        rd: on ? 'var(--brand-green)' : 'transparent'
+      };
+    });
+    return out;
+  }
+  cards(key, items, cols) {
+    return React.createElement('div', {
+      style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(' + (cols || 220) + 'px,1fr))', gap: '16px' }
+    }, items.map(([label, sub, icon]) => {
+      const on = this.state[key] === label;
+      return React.createElement('button', {
+        key: label, type: 'button', className: 'opt', onClick: this.pick(key, label),
+        style: {
+          padding: '18px 20px', borderRadius: '16px', textAlign: 'left', cursor: 'pointer',
+          border: '1px solid ' + (on ? 'var(--brand-green)' : 'var(--color-border-strong)'),
+          background: on ? 'var(--color-success-soft)' : '#fff',
+          fontFamily: 'Poppins,sans-serif', display: 'flex', gap: '12px', alignItems: 'flex-start'
+        }
+      }, [
+        icon ? React.createElement('i', { key: 'i', 'data-lucide': icon, 'stroke-width': '1.75', style: { width: '20px', height: '20px', color: 'var(--brand-green-dark)', flex: 'none' } }) : null,
+        React.createElement('span', { key: 't', style: { minWidth: 0 } }, [
+          React.createElement('span', { key: 'a', style: { display: 'block', fontSize: '15px', fontWeight: 600, color: 'var(--color-text)' } }, label),
+          sub ? React.createElement('span', { key: 'b', style: { display: 'block', marginTop: '2px', fontSize: '13px', lineHeight: 1.45, color: 'var(--color-text-secondary)' } }, sub) : null
+        ])
+      ]);
+    }));
+  }
+
+  group(title, key, items, cols) {
+    return React.createElement('div', { key: title }, [
+      React.createElement('div', { key: 'h', style: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' } }, [
+        React.createElement('span', { key: 'd', style: { width: '18px', height: '18px', borderRadius: '100px', background: this.state[key] ? 'var(--brand-green)' : 'var(--slate-200)', display: 'block', flex: 'none' } }),
+        React.createElement('span', { key: 't', style: { fontSize: '16px', fontWeight: 600 } }, title)
+      ]),
+      this.cards(key, items, cols)
+    ]);
+  }
+
+  reviewCard(title, rows, stepIndex) {
+    return React.createElement('div', {
+      key: title,
+      style: { borderRadius: '16px', border: '1px solid var(--color-border-strong)', padding: '24px 28px', background: 'var(--surface-sunken)' }
+    }, [
+      React.createElement('div', { key: 'h', style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px' } }, [
+        React.createElement('span', { key: 't', style: { fontSize: '13px', fontWeight: 600, letterSpacing: '0.6px', textTransform: 'uppercase', color: 'var(--brand-green-dark)' } }, title),
+        React.createElement('button', {
+          key: 'e', type: 'button', onClick: () => this.setState({ step: stepIndex }),
+          style: { display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '100px', border: '1px solid var(--color-border-strong)', background: '#fff', fontFamily: 'Poppins,sans-serif', fontSize: '13px', fontWeight: 600, color: 'var(--color-text)', cursor: 'pointer' }
+        }, 'Edit')
+      ]),
+      React.createElement('div', { key: 'r', style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '12px' } },
+        rows.map(([k, v]) => React.createElement('div', { key: k, style: { display: 'flex', gap: '24px', fontSize: '15px' } }, [
+          React.createElement('span', { key: 'a', style: { flex: '0 0 180px', color: 'var(--color-text-secondary)' } }, k),
+          React.createElement('span', { key: 'b', style: { fontWeight: 600 } }, v || '—')
+        ])))
+    ]);
+  }
+
+  renderVals() {
+    const st = this.state;
+    const key = STEPS[st.step];
+    const h = HEADINGS[key];
+    const pct = st.price > 0 ? Math.round((st.deposit / st.price) * 100) : 0;
+    const meta = {};
+    for (let i = 0; i < 8; i++) meta['s' + (i + 1)] = this.stepMeta(i);
+
+    const propSummary = [st.propType, st.propUse].filter(Boolean).join(' · ');
+    const finSummary = st.step > 4 ? this.money(st.price) + ' · ' + this.money(st.deposit) : '';
+    const searchSummary = [st.stage, st.closing].filter(Boolean).join(' · ');
+    const youSummary = st.step > 6 && st.first ? 'Submitted' : '';
+
+    const opts = Object.assign({},
+      this.optSet('country', 'country', ['Canada', 'United States']),
+      this.optSet('goal', 'goal', ['Buy a home', 'I already own one', 'Commercial or business', 'Land or construction', 'Investment property', 'Partner broker']),
+      this.optSet('credit', 'credit', ['No credit', 'Building credit', 'Fair', 'Good', 'Excellent']),
+      this.optSet('ptype', 'propType', ['Single family', 'Condo / townhouse', '2 to 4 units', 'Commercial']),
+      this.optSet('puse', 'propUse', ['Primary residence', 'Vacation home', 'Investment']),
+      this.optSet('pres', 'residency', ['Citizen', 'Permanent resident', 'Foreign resident']),
+      this.optSet('stage', 'stage', ['Just starting to look', 'I’ve identified a home', 'I’ve made an offer', 'My offer was accepted']),
+      this.optSet('closing', 'closing', ['Within 30 days', 'Within 90 days', 'Within 6 months', 'Within 1 year', 'A year or more']),
+      this.optSet('agent', 'agent', ['Yes, I have one', 'I’m looking for one', 'Not yet'])
+    );
+
+    return Object.assign(meta, opts, {
+      step: 'step-' + st.step,
+      heading: h[0], subhead: h[1],
+      a: {
+        country: st.country, goal: st.goal, credit: st.credit,
+        propSummary: propSummary, finSummary: finSummary,
+        searchSummary: searchSummary, youSummary: youSummary
+      },
+      isCountry: key === 'country', isGoal: key === 'goal', isCredit: key === 'credit',
+      isProperty: key === 'property', isFinances: key === 'finances', isSearch: key === 'search',
+      isYou: key === 'you', isReview: key === 'review', isDone: key === 'done',
+      showNav: key !== 'done',
+
+      pickCanada: this.pick('country', 'Canada'),
+      pickUS: this.pick('country', 'United States'),
+      optCanada: st.country === 'Canada' ? 'var(--brand-green)' : 'var(--color-border-strong)',
+      bgCanada: st.country === 'Canada' ? 'var(--color-success-soft)' : '#fff',
+      optUS: st.country === 'United States' ? 'var(--brand-green)' : 'var(--color-border-strong)',
+      bgUS: st.country === 'United States' ? 'var(--color-success-soft)' : '#fff',
+
+      dotType: st.propType ? 'var(--brand-green)' : 'var(--slate-200)',
+      dotUse: st.propUse ? 'var(--brand-green)' : 'var(--slate-200)',
+      dotRes: st.residency ? 'var(--brand-green)' : 'var(--slate-200)',
+      dotStage: st.stage ? 'var(--brand-green)' : 'var(--slate-200)',
+      dotClosing: st.closing ? 'var(--brand-green)' : 'var(--slate-200)',
+      dotAgent: st.agent ? 'var(--brand-green)' : 'var(--slate-200)',
+      v: {
+        country: st.country || '—', goal: st.goal || '—', credit: st.credit || '—',
+        ptype: st.propType || '—', puse: st.propUse || '—', pres: st.residency || '—',
+        stage: st.stage || '—', closing: st.closing || '—', agent: st.agent || '—',
+        name: [st.first, st.last].filter(Boolean).join(' ') || '—',
+        email: st.email || '—', phone: st.phone || '—',
+        address: [st.city, st.region, st.postal].filter(Boolean).join(', ') || '—'
+      },
+      editGoal: () => this.setState({ step: 0 }),
+      editProperty: () => this.setState({ step: 3 }),
+      editFinances: () => this.setState({ step: 4 }),
+      editYou: () => this.setState({ step: 6 }),
+      _unusedGoal: this.cards('goal', [
+        ['Buy a home', 'First home or your next one', 'house'],
+        ['I already own one', 'Refinance or convert to Sharia compliant', 'refresh-cw'],
+        ['Commercial or business', 'Office, retail, mosque, school', 'building-2'],
+        ['Land or construction', 'Buy a plot, build in stages', 'trees'],
+        ['Investment property', 'Earn through the co op model', 'trending-up'],
+        ['Partner broker', 'Refer clients to ijaraCDC', 'handshake']
+      ]),
+      creditCards: this.cards('credit', [
+        ['No credit', 'We have a program for this', 'circle-slash'],
+        ['Building credit', 'Under 620', 'sprout'],
+        ['Fair', '620 to 699', 'gauge'],
+        ['Good', '700 to 759', 'thumbs-up'],
+        ['Excellent', '760 and above', 'award']
+      ], 200),
+      propertyGroups: React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: '32px' } }, [
+        this.group('Type of property', 'propType', [['Single family', '', 'house'], ['Condo / townhouse', '', 'building'], ['2 to 4 units', '', 'layers'], ['Commercial', '', 'building-2']], 200),
+        this.group('How will it be used', 'propUse', [['Primary residence', '', 'home'], ['Vacation home', '', 'sun'], ['Investment', '', 'trending-up']], 200),
+        this.group('Your residency status', 'residency', [['Citizen', '', 'flag'], ['Permanent resident', '', 'id-card'], ['Foreign resident', '', 'globe']], 200)
+      ]),
+      searchGroups: React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: '32px' } }, [
+        this.group('Where are you in the process?', 'stage', [['Just starting to look', '', 'search'], ["I've identified a home", '', 'map-pin'], ["I've made an offer", '', 'file-text'], ['My offer was accepted', '', 'circle-check']], 200),
+        this.group('How soon would you like to close?', 'closing', [['Within 30 days', '', 'clock'], ['Within 90 days', '', 'clock'], ['Within 6 months', '', 'clock'], ['Within 1 year', '', 'clock'], ['A year or more', '', 'clock']], 180),
+        this.group('Working with a real estate agent?', 'agent', [['Yes, I have one', '', 'circle-check'], ["I'm looking for one", '', 'search'], ['Not yet', '', 'circle-minus']], 200)
+      ]),
+
+      priceTrack: this.track(st.price, 50000, 5000000),
+      depositTrack: this.track(st.deposit, 0, 2000000),
+      price: st.price, deposit: st.deposit,
+      priceLabel: this.money(st.price), depositLabel: this.money(st.deposit),
+      depositNote: "That's a " + pct + '% deposit on a ' + this.money(st.price) + ' purchase.',
+      onPrice: this.set('price'), onDeposit: this.set('deposit'),
+
+      first: st.first, last: st.last, email: st.email, phone: st.phone,
+      city: st.city, region: st.region, postal: st.postal, consent: st.consent,
+      onFirst: this.set('first'), onLast: this.set('last'), onEmail: this.set('email'),
+      onPhone: this.set('phone'), onCity: this.set('city'), onRegion: this.set('region'),
+      onPostal: this.set('postal'), onConsent: (e) => this.setState({ consent: e.target.checked }),
+
+      reviewCards: React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: '16px' } }, [
+        this.reviewCard('Goal', [['Country', st.country], ['Goal', st.goal], ['Credit score', st.credit]], 0),
+        this.reviewCard('Property', [['Type', st.propType], ['Use', st.propUse], ['Residency', st.residency], ['Search stage', st.stage], ['Closing window', st.closing], ['Realtor', st.agent]], 3),
+        this.reviewCard('Finances', [['Purchase price', this.money(st.price)], ['Deposit', this.money(st.deposit)]], 4),
+        this.reviewCard('You', [['Name', [st.first, st.last].filter(Boolean).join(' ')], ['Email', st.email], ['Phone', st.phone], ['Address', [st.city, st.region, st.postal].filter(Boolean).join(', ')]], 6)
+      ]),
+
+      nextLabel: key === 'review' ? 'Submit my application' : key === 'you' ? 'Review your details' : 'Continue',
+      nextBg: key === 'review' ? 'var(--brand-orange)' : 'var(--brand-green)',
+      next: () => this.setState((s) => ({ step: Math.min(s.step + 1, STEPS.length - 1) })),
+      back: () => this.setState((s) => ({ step: Math.max(s.step - 1, 0) }))
+    });
+  }
+}
+</script>
+</body>
+</html>

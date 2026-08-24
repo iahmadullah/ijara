@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/colors.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/typography.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/radius.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/tokens/motion.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/base.css">
+<link rel="stylesheet" href="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/styles.css">
+<script src="_ds/ijara-cdc-design-system-fae5207b-e577-49cf-947c-7f26eb289e7f/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.470.0/dist/umd/lucide.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  body { margin:0; background:var(--surface-sunken); font-family:Poppins,sans-serif; font-weight:500; color:var(--color-text); -webkit-font-smoothing:antialiased; }
+  a { color:var(--color-link); text-decoration:none; }
+  a:hover { color:var(--color-link-hover); }
+  summary { list-style:none; cursor:pointer; }
+  summary::-webkit-details-marker { display:none; }
+  details[open] .faq-plus { transform:rotate(45deg); }
+  details[open] .faq-chev { transform:rotate(45deg); }
+  input[type="checkbox"] { accent-color:var(--brand-green); width:18px; height:18px; }
+  .scroller { scrollbar-width:none; }
+  .scroller::-webkit-scrollbar { display:none; }
+  .ijara-range { -webkit-appearance:none; appearance:none; height:8px; border-radius:100px; background:var(--slate-200); border:none; }
+  .ijara-range::-webkit-slider-runnable-track { height:8px; border-radius:100px; background:transparent; }
+  .ijara-range::-moz-range-track { height:8px; border-radius:100px; background:transparent; }
+  .ijara-range::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; margin-top:-6px; border-radius:100px; background:var(--brand-green-dark); border:3px solid #fff; box-shadow:var(--shadow-low); cursor:pointer; }
+  .ijara-range::-moz-range-thumb { width:20px; height:20px; border-radius:100px; background:var(--brand-green-dark); border:3px solid #fff; cursor:pointer; }
+  #site-header .hdr-cta { background:var(--brand-green); color:#fff; }
+  #site-header.stuck .hdr-cta { background:var(--brand-green); color:#fff; }
+  .navitem > .navpanel { opacity:0; visibility:hidden; transform:translateY(-6px); transition:opacity 200ms cubic-bezier(0.4,0,0.2,1), transform 200ms cubic-bezier(0.4,0,0.2,1), visibility 200ms; }
+  .navitem:hover > .navpanel { opacity:1; visibility:visible; transform:translateY(0); }
+  @media (min-width:1560px) { #site-header nav { order:0 !important; flex:1 1 auto !important; } }
+  @media (max-width:1500px) { .hdr-contact { display:none !important; } }
+  .navitem:hover > .navtrigger { color:var(--brand-green-dark); }
+  .navitem:hover > .navtrigger .navchev { transform:rotate(180deg); }
+  .navchev { transition:transform 200ms cubic-bezier(0.4,0,0.2,1); }
+  .navlink { transition:background 200ms cubic-bezier(0.4,0,0.2,1); }
+  .navlink:hover { background:#fff; }
+  .navlink:hover .navlink-i { background:var(--color-success-soft); }
+  .navlink:hover .navlink-t { color:var(--brand-green-dark); }
+  #site-header.stuck { box-shadow:var(--shadow-low); }
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+  <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:1000;transition:background 200ms cubic-bezier(0.4,0,0.2,1),box-shadow 200ms cubic-bezier(0.4,0,0.2,1)">
+    <div style="padding:10px 32px;background:var(--brand-orange);display:flex;justify-content:center">
+      <div style="display:flex;align-items:center;gap:20px;color:#fff">
+        <span dir="rtl" lang="ar" style="font-size: 12px; line-height: 1.4; font-weight: 500">─── بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ───</span>
+      </div>
+    </div>
+    <div style="position:relative;padding:20px 48px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border)">
+      <div style="max-width:1600px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;row-gap:12px;column-gap:clamp(20px,3vw,64px)">
+        <a href="#top" style="flex:none;margin-right:auto;display:block"><img src="assets/ijara-cdc-logo.png" alt="ijara Community Development Corp." style="height:44px;width:auto;display:block"></a>
+        <nav style="position:static;order:3;flex:1 1 100%;display:flex;flex-wrap:wrap;justify-content:center;column-gap:clamp(12px,1.6vw,28px);row-gap:4px">
+        <div class="navitem" style="position:static">
+          <span class="navtrigger" style="cursor:default;display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:13px;font-weight:600;color:var(--color-text);white-space:nowrap">Programs<i class="navchev" data-lucide="chevron-down" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+          <div class="navpanel" style="position:absolute;top:100%;left:0;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);max-height:calc(100vh - var(--hdr-bottom, 183px) - 32px);overflow-y:auto;display:flex;gap:24px;padding:24px0left:50%;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);display:flex;gap:24px;padding:24px;border-radius:32px;background:var(--surface-sunken);box-shadow:var(--shadow-overlay);z-index:1001">
+            <div style="flex:1 1 auto;min-width:0;width:360px;display:grid;grid-template-columns:1fr;gap:4px">
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="house" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Residential</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Halal financing for primary homes across the USA and Canada.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="building-2" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Commercial</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Riba free funding for retail, office and mixed use property.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="refresh-cw" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Conversion</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Switch your conventional mortgage into a halal structure.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="trending-up" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Investment Opportunities</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Earn returns through the ijara co op investor model.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="handshake" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">ijaraCDC Partner Broker</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Bring halal financing to your clients with our partner program.</span>
+              </span>
+            </a>
+            </div>
+          <div style="flex:0 1 300px;min-width:0;width:300px;border-radius:24px;padding:16px;background:#fff;border:1px solid var(--color-border-strong);display:flex;flex-direction:column">
+            <div style="position:relative;border-radius:16px;overflow:hidden;flex:1 1 auto;min-height:120px;background:var(--slate-100)">
+              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="A modern office building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,0.94);font-size:12px;font-weight:600;color:var(--color-text)">Prequalify in minutes</div>
+            </div>
+            <div style="margin-top:14px;font-size:16px;font-weight:600;letter-spacing:-0.3px">Find your halal path</div>
+            <p style="margin:6px 0 0;font-size:12px;line-height:1.45;color:var(--color-text-secondary)">Five programs designed around your situation.</p>
+            <a href="Apply.dc.html" style="margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brand-green-dark)">Get started for free<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+          </div>
+          </div>
+        </div>
+        <div class="navitem" style="position:static">
+          <span class="navtrigger" style="cursor:default;display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:13px;font-weight:600;color:var(--color-text);white-space:nowrap">How It Works<i class="navchev" data-lucide="chevron-down" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+          <div class="navpanel" style="position:absolute;top:100%;left:0;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);max-height:calc(100vh - var(--hdr-bottom, 183px) - 32px);overflow-y:auto;display:flex;gap:24px;padding:24px-120pxleft:50%;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);display:flex;gap:24px;padding:24px;border-radius:32px;background:var(--surface-sunken);box-shadow:var(--shadow-overlay);z-index:1001">
+            <div style="flex:1 1 auto;min-width:0;width:360px;display:grid;grid-template-columns:1fr;gap:4px">
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="route" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Ijara Process</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">The lease to own model, explained in three simple steps.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="clipboard-check" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Am I Qualified</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">A quick self check before you start your application.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="list-checks" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Residential Checklist</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Everything you will need to gather to apply with confidence.</span>
+              </span>
+            </a>
+            </div>
+          <div style="flex:0 1 300px;min-width:0;width:300px;border-radius:24px;padding:16px;background:#fff;border:1px solid var(--color-border-strong);display:flex;flex-direction:column">
+            <div style="position:relative;border-radius:16px;overflow:hidden;flex:1 1 auto;min-height:120px;background:var(--slate-100)">
+              <img src="https://images.pexels.com/photos/8353802/pexels-photo-8353802.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="A father and son reading together" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,0.94);font-size:12px;font-weight:600;color:var(--color-text)">Watch the explainer · 1:42</div>
+            </div>
+            <div style="margin-top:14px;font-size:16px;font-weight:600;letter-spacing:-0.3px">Faith first. Financing second.</div>
+            <p style="margin:6px 0 0;font-size:12px;line-height:1.45;color:var(--color-text-secondary)">A short video walkthrough of the ijara lease to own model.</p>
+            <a href="Apply.dc.html" style="margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brand-green-dark)">Play the video<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+          </div>
+          </div>
+        </div>
+        <div class="navitem" style="position:static">
+          <span class="navtrigger" style="cursor:default;display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:13px;font-weight:600;color:var(--color-text);white-space:nowrap">Sharia Compliance<i class="navchev" data-lucide="chevron-down" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+          <div class="navpanel" style="position:absolute;top:100%;left:0;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);max-height:calc(100vh - var(--hdr-bottom, 183px) - 32px);overflow-y:auto;display:flex;gap:24px;padding:24px-240pxleft:50%;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);display:flex;gap:24px;padding:24px;border-radius:32px;background:var(--surface-sunken);box-shadow:var(--shadow-overlay);z-index:1001">
+            <div style="flex:1 1 auto;min-width:0;width:360px;display:grid;grid-template-columns:1fr;gap:4px">
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="badge-check" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Is It Halal?</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">How scholars vet every ijara contract we offer.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="scroll-text" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Fatwa</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Read the rulings that endorse our financing model.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="file-text" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Review Documents</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Sample agreements you can inspect end to end.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="moon-star" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Hajj Qualification</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Plan ahead for the pilgrimage alongside halal financing.</span>
+              </span>
+            </a>
+            </div>
+          <div style="flex:0 1 300px;min-width:0;width:300px;border-radius:24px;padding:16px;background:#fff;border:1px solid var(--color-border-strong);display:flex;flex-direction:column">
+            <div style="position:relative;border-radius:16px;overflow:hidden;flex:1 1 auto;min-height:120px;background:var(--surface-card-inverse)">
+              
+              <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,0.94);font-size:12px;font-weight:600;color:var(--color-text)">Sharia certified</div>
+            </div>
+            <div style="margin-top:14px;font-size:16px;font-weight:600;letter-spacing:-0.3px">Reviewed by scholars</div>
+            <p style="margin:6px 0 0;font-size:12px;line-height:1.45;color:var(--color-text-secondary)">Every contract is grounded in the classical ijara structure.</p>
+            <a href="Apply.dc.html" style="margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brand-green-dark)">See the fatwa<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+          </div>
+          </div>
+        </div>
+        <div class="navitem" style="position:static">
+          <span class="navtrigger" style="cursor:default;display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:13px;font-weight:600;color:var(--color-text);white-space:nowrap">About Us<i class="navchev" data-lucide="chevron-down" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+          <div class="navpanel" style="position:absolute;top:100%;left:0;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);max-height:calc(100vh - var(--hdr-bottom, 183px) - 32px);overflow-y:auto;display:flex;gap:24px;padding:24px-420pxleft:50%;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);display:flex;gap:24px;padding:24px;border-radius:32px;background:var(--surface-sunken);box-shadow:var(--shadow-overlay);z-index:1001">
+            <div style="flex:1 1 auto;min-width:0;width:360px;display:grid;grid-template-columns:1fr;gap:4px">
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="users" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Who We Are</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Our mission, leadership, and the families we serve.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="history" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Our History</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Two decades of riba free home and business financing.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="handshake" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Be a Partner</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Realtors, lenders, and brokers who refer to ijaraCDC.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="message-square" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Contact Us</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Speak with a halal finance advisor today.</span>
+              </span>
+            </a>
+            </div>
+          <div style="flex:0 1 300px;min-width:0;width:300px;border-radius:24px;padding:16px;background:#fff;border:1px solid var(--color-border-strong);display:flex;flex-direction:column">
+            <div style="position:relative;border-radius:16px;overflow:hidden;flex:1 1 auto;min-height:120px;background:var(--slate-100)">
+              <img src="https://images.pexels.com/photos/2233416/pexels-photo-2233416.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="A mosque at dusk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,0.94);font-size:12px;font-weight:600;color:var(--color-text)">Trusted since 2005</div>
+            </div>
+            <div style="margin-top:14px;font-size:16px;font-weight:600;letter-spacing:-0.3px">Twenty years of trust</div>
+            <p style="margin:6px 0 0;font-size:12px;line-height:1.45;color:var(--color-text-secondary)">Thousands of Muslim families and businesses served since 2005.</p>
+            <a href="Apply.dc.html" style="margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brand-green-dark)">Read our story<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+          </div>
+          </div>
+        </div>
+        <div class="navitem" style="position:static">
+          <span class="navtrigger" style="cursor:default;display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:13px;font-weight:600;color:var(--color-text);white-space:nowrap">Resources<i class="navchev" data-lucide="chevron-down" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+          <div class="navpanel" style="position:absolute;top:100%;left:0;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);max-height:calc(100vh - var(--hdr-bottom, 183px) - 32px);overflow-y:auto;display:flex;gap:24px;padding:24px-560pxleft:50%;box-sizing:border-box;width:max-content;max-width:calc(100vw - 64px);display:flex;gap:24px;padding:24px;border-radius:32px;background:var(--surface-sunken);box-shadow:var(--shadow-overlay);z-index:1001">
+            <div style="flex:1 1 auto;min-width:0;width:440px;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;align-content:start">
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="calculator" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Ijara Calculator</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Estimate your monthly halal financing payment.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="life-buoy" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">FAQs</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">The questions our advisors hear most.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="book-open" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Blog</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Insights on halal finance and home ownership.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="quote" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Testimonials</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Stories from real families and businesses.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="map-pin" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Preferred Realtors</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Trusted partners across North America.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="newspaper" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">News / Events</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Latest from the ijaraCDC community.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="book-a" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Glossary</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Plain language definitions of halal finance terms.</span>
+              </span>
+            </a>
+            <a class="navlink" href="#programs" style="display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;color:var(--color-text)">
+              <span class="navlink-i" style="flex:none;width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="chart-no-axes-column" stroke-width="1.75" style="width:17px;height:17px"></i></span>
+              <span style="min-width:0">
+                <span class="navlink-t" style="display:block;font-size:14px;font-weight:600;letter-spacing:-0.2px;color:var(--color-text)">Infographics</span>
+                <span style="display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--color-text-secondary)">Visual explainers of the ijara model.</span>
+              </span>
+            </a>
+            </div>
+          <div style="flex:0 1 300px;min-width:0;width:300px;border-radius:24px;padding:16px;background:#fff;border:1px solid var(--color-border-strong);display:flex;flex-direction:column">
+            <div style="position:relative;border-radius:16px;overflow:hidden;flex:1 1 auto;min-height:120px;background:var(--slate-100)">
+              <img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Using the app on a phone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,0.94);font-size:12px;font-weight:600;color:var(--color-text)">ijara 360 App</div>
+            </div>
+            <div style="margin-top:14px;font-size:16px;font-weight:600;letter-spacing:-0.3px">Your halal day, in one app</div>
+            <p style="margin:6px 0 0;font-size:12px;line-height:1.45;color:var(--color-text-secondary)">Prayer times, Quran, Qibla, Zakat and the ijara calculator.</p>
+            <a href="Apply.dc.html" style="margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brand-green-dark)">Download the app<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+          </div>
+          </div>
+        </div>
+        </nav>
+        <div style="flex:0 1 auto;min-width:0;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:clamp(10px,1vw,20px)">
+          <div class="hdr-contact" style="display:flex;flex-direction:column;gap:6px;font-size:14px;white-space:nowrap">
+            <a href="tel:+18778645272" style="display:inline-flex;align-items:center;gap:8px;color:var(--color-text)"><i data-lucide="phone" stroke-width="1.75" style="width:15px;height:15px;color:var(--brand-green)"></i>(877) 864 5272</a>
+            <a href="mailto:info@ijaracdc.com" style="display:inline-flex;align-items:center;gap:8px;color:var(--color-text)"><i data-lucide="mail" stroke-width="1.75" style="width:15px;height:15px;color:var(--brand-green)"></i>info@ijaracdc.com</a>
+          </div>
+          <a href="#login" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;font-size:13px;font-weight:600;color:var(--color-text);white-space:nowrap" style-hover="background:var(--slate-50)">Customer Portal</a>
+          <a href="Apply.dc.html" class="hdr-cta" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;white-space:nowrap">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:14px;height:14px"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>.75" stroke-linecap="round" stroke-linejoin="round" data-lucide="log-in" data-om-id="48e2aab0:30" style="width: 16px; height: 16px;" class="lucide lucide-log-in"&gt;<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" x2="3" y1="12" y2="12"></line>Login Customer portal
+        <a href="Apply.dc.html" class="hdr-cta" style="display:inline-flex;align-items:center;padding:10px 20px;border-radius:100px;font-size:14px;font-weight:600">{{ ctaLabel }}</a>
+      </div>
+    
+  
+
+  <section style="padding:0">
+    
+  <div style="position: relative; overflow: hidden; min-height: calc(100vh - 40px); border-radius: 0 0 24px 24px; display: flex; align-items: center; justify-content: center; background: url(&quot;./chatgpt-image-aug-21-2026-02_00_33-pm-mt2rc3q4-8j49.png&quot;) center / cover no-repeat">
+      <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:200px 32px 96px;box-sizing:border-box;display:grid;grid-template-columns:minmax(320px,1.05fr) minmax(320px,0.95fr);gap:64px;align-items:center;justify-items:stretch">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="shield-check" stroke-width="1.75" style="width:14px;height:14px"></i>Riba-free since 2005</div>
+          <h1 style="margin: 24px 0 0; max-width: 560px; font-size: 68px; line-height: 1.02; letter-spacing: -3.4px; font-weight: 600; color: var(--color-text); text-wrap: pretty">20 years of riba free financing alternative</h1>
+          <p style="margin:24px 0 0;max-width:460px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">A Sharia compliant, interest-free path to home and business ownership for Muslim families across the USA and Canada. We have helped thousands without compromise.</p>
+          <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:12px">
+            <a href="Apply.dc.html" style="display:inline-flex;align-items:center;gap:6px;padding:16px 32px;border-radius:100px;background:var(--surface-card-inverse);color:#fff;font-size:16px;font-weight:600" style-hover="background:#000">{{ ctaLabel }}<i data-lucide="arrow-right" stroke-width="1.75" style="width:18px;height:18px"></i></a>
+            <a href="#steps" style="display:inline-flex;align-items:center;gap:6px;padding:16px 32px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-size:16px;font-weight:600" style-hover="background:var(--slate-50)">How it works</a>
+          </div>
+          <div style="margin-top:32px;display:flex;align-items:center;gap:12px">
+            <div style="display:flex">
+              <div style="width:48px;height:48px;border-radius:100px;overflow:hidden;border:2px solid #fff;"><img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+              <div style="width:48px;height:48px;border-radius:100px;overflow:hidden;border:2px solid #fff;margin-left:-14px;"><img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+              <div style="width:48px;height:48px;border-radius:100px;overflow:hidden;border:2px solid #fff;margin-left:-14px;"><img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+              <div style="width:48px;height:48px;border-radius:100px;background:var(--brand-green);border:2px solid #fff;margin-left:-14px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#fff">5k+</div>
+            </div>
+            <div style="font-size:14px;color:var(--color-text-secondary)">Riba-free financing since 2005</div>
+          </div>
+        </div>
+
+        <div style="justify-self:end;width:100%;max-width:470px;display:flex;flex-direction:column;gap:32px">
+        <div style="border-radius:32px;padding:32px;background:#fff;box-shadow:var(--shadow-card)">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="flex:none;width:44px;height:44px;border-radius:100px;background:var(--color-success-soft);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark)"><i data-lucide="calculator" stroke-width="1.75" style="width:22px;height:22px"></i></div>
+            <div style="font-size:20px;font-weight:600;letter-spacing:-0.5px">Estimate your payment</div>
+          </div>
+
+          <div style="margin-top:32px;display:flex;flex-direction:column;gap:24px">
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--color-text)">Country</div>
+              <div style="margin-top:8px;display:flex;gap:24px">
+                <label style="display:flex;align-items:center;gap:8px;font-size:16px;color:var(--color-text-secondary);cursor:pointer"><input type="radio" name="calc-country" checked="{{ isUS }}" onChange="{{ pickUS }}" style="accent-color:var(--brand-green);width:16px;height:16px">United States</label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:16px;color:var(--color-text-secondary);cursor:pointer"><input type="radio" name="calc-country" checked="{{ isCA }}" onChange="{{ pickCA }}" style="accent-color:var(--brand-green);width:16px;height:16px">Canada</label>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <span style="font-size:14px;font-weight:600;color:var(--color-text)">Ijara finance amount</span>
+                <span style="font-size:14px;font-weight:600;color:var(--brand-green-dark)">{{ calcAmountLabel }}</span>
+              </div>
+              <input type="range" min="50000" max="2000000" step="10000" value="{{ calcAmount }}" onInput="{{ onAmount }}" class="ijara-range" style="margin-top:12px;width:100%;cursor:pointer;background:{{ amountTrack }}">
+            </div>
+            <div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <span style="font-size:14px;font-weight:600;color:var(--color-text)">Ijara finance term</span>
+                <span style="font-size:14px;font-weight:600;color:var(--brand-green-dark)">{{ calcTermLabel }}</span>
+              </div>
+              <input type="range" min="1" max="30" step="1" value="{{ calcTerm }}" onInput="{{ onTerm }}" class="ijara-range" style="margin-top:12px;width:100%;cursor:pointer;background:{{ termTrack }}">
+            </div>
+            <div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <span style="font-size:14px;font-weight:600;color:var(--color-text)">Annual profit rate</span>
+                <span style="font-size:14px;font-weight:600;color:var(--brand-green-dark)">{{ calcRateLabel }}</span>
+              </div>
+              <input type="range" min="0" max="15" step="0.125" value="{{ calcRate }}" onInput="{{ onRate }}" class="ijara-range" style="margin-top:12px;width:100%;cursor:pointer;background:{{ rateTrack }}">
+            </div>
+          </div>
+
+          <div style="margin-top:24px;padding:24px;border-radius:16px;background:var(--slate-100);text-align:center">
+            <div style="font-size:32px;line-height:1.15;letter-spacing:-1.1px;font-weight:600;color:var(--brand-green-dark)">{{ calcPayment }}</div>
+            <div style="margin-top:6px;font-size:14px;color:var(--color-text-secondary)">Your monthly payment over {{ calcTermLabel }}</div>
+          </div>
+          <p style="margin:16px 0 0;font-size:12px;line-height:1.5;color:var(--color-text-tertiary)">Estimates are presented without warranty and pre-qualified offers are not binding.</p>
+        </div>
+
+          
+        </div>
+      </div>
+    </div></section>
+
+  
+
+  <section id="about-us" data-count-root="1" style="padding:120px 32px;background:var(--surface-sunken)" data-om-label="ABout text">
+    <div style="max-width:1280px;margin:0 auto;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="users" stroke-width="1.75" style="width:14px;height:14px"></i>About us</div>
+
+      <p style="margin: 32px auto 0; max-width: 920px; font-size: 32px; line-height: 1.25; letter-spacing: -1.1px; font-weight: 600; color: var(--slate-900); text-wrap: pretty"><span style="color:var(--color-text)">With two decades of halal finance experience, we deliver Sharia compliant paths to ownership</span> — built on personal advice, scholarly review, and a co op of investors who buy property on your behalf, riba free.</p>
+
+      <div style="margin-top:40px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--color-border-strong)">
+          <i data-lucide="house" stroke-width="1.75" style="width:15px;height:15px;color:var(--brand-green-dark)"></i>
+          <span style="font-size:14px;line-height:1.3;font-weight:600;color:var(--color-text)">Riba-free co-ownership</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--color-border-strong)">
+          <i data-lucide="scroll-text" stroke-width="1.75" style="width:15px;height:15px;color:var(--brand-green-dark)"></i>
+          <span style="font-size:14px;line-height:1.3;font-weight:600;color:var(--color-text)">Sharia-reviewed contracts</span>
+        </div>
+        
+        
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--color-border-strong)">
+          <i data-lucide="map" stroke-width="1.75" style="width:15px;height:15px;color:var(--brand-green-dark)"></i>
+          <span style="font-size:14px;line-height:1.3;font-weight:600;color:var(--color-text)">USA &amp; Canada</span>
+        </div>
+      </div>
+
+      <div style="margin-top:96px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div style="padding:0 clamp(12px,2vw,32px);text-align:center;">
+          <div style="font-size:clamp(32px,3vw,52px);line-height:1.06;letter-spacing:-2.08px;font-weight:600;color:var(--color-text)">{{ nYears }} yrs</div>
+          <div style="margin-top:16px;font-size:16px;color:var(--color-text-secondary)">Of riba free service to Muslim communities</div>
+        </div>
+        <div style="padding:0 clamp(12px,2vw,32px);text-align:center;border-left:1px solid var(--color-divider);">
+          <div style="font-size:clamp(32px,3vw,52px);line-height:1.06;letter-spacing:-2.08px;font-weight:600;color:var(--color-text)">{{ nFamilies }}<span style="color:var(--brand-green)">+</span></div>
+          <div style="margin-top:16px;font-size:16px;color:var(--color-text-secondary)">Families &amp; businesses helped</div>
+        </div>
+        <div style="padding:0 clamp(12px,2vw,32px);text-align:center;border-left:1px solid var(--color-divider);">
+          <div style="font-size:clamp(32px,3vw,52px);line-height:1.06;letter-spacing:-2.08px;font-weight:600;color:var(--color-text)">{{ nGrant }}<span style="color:var(--brand-green)">%</span></div>
+          <div style="margin-top:16px;font-size:16px;color:var(--color-text-secondary)">Down payment grant available</div>
+        </div>
+        <div style="padding:0 clamp(12px,2vw,32px);text-align:center;border-left:1px solid var(--color-divider);">
+          <div style="font-size:clamp(32px,3vw,52px);line-height:1.06;letter-spacing:-2.08px;font-weight:600;color:var(--color-text)">{{ nHalal }}<span style="color:var(--brand-green)">%</span></div>
+          <div style="margin-top:16px;font-size:16px;color:var(--color-text-secondary)">Halal — every contract, every payment</div>
+        </div>
+      </div>
+
+      <div style="margin-top:96px;border-radius:32px;overflow:hidden;background:var(--surface-card-inverse)">
+        <div style="position:relative;aspect-ratio:16 / 9">
+          <video src="https://www.pexels.com/download/video/38630305/" autoplay="{{ yes }}" muted="{{ yes }}" loop="{{ yes }}" playsinline="{{ yes }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.2),rgba(9,13,16,0.65));pointer-events:none"></div>
+          <div style="position:absolute;left:40px;bottom:40px;max-width:520px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;text-align:left;pointer-events:none">
+            <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:#fff;color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase">Our story</div>
+            <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff;text-align:left;text-wrap:pretty">Twenty years of riba-free ownership across the USA and Canada</div>
+          </div>
+          <button type="button" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border:none;border-radius:100px;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark);cursor:pointer;box-shadow:var(--shadow-card)" style-hover="background:#fff"><i data-lucide="play" stroke-width="1.75" style="width:30px;height:30px"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" style="padding:96px 0 120px">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="layout-grid" stroke-width="1.75" style="width:14px;height:14px"></i>Our programs</div>
+      <h2 style="margin: 24px auto 0; max-width: 640px; font-size: 42px; line-height: 1.06; letter-spacing: -2.08px; font-weight: 600">Financing Options Built Around Your Goals</h2>
+    </div>
+
+    <div class="scroller" style="margin-top:48px;display:flex;gap:24px;overflow-x:auto;padding-bottom:12px;padding-right:32px;padding-left:max(32px,calc((100% - 1280px)/2));text-align:left;align-items:stretch">
+      <a href="#programs" style="position:relative;flex:0 0 360px;min-height:590px;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;color:#fff">
+        <img src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A family home lit at dusk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.68) 0%,rgba(9,13,16,0.45) 42%,rgba(9,13,16,0.2) 70%,rgba(9,13,16,0.45) 100%);pointer-events:none"></div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;padding:40px">
+          <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff">Residential</div>
+          <p style="margin:16px 0 0;max-width:280px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Own the home you live in through declining-balance co-ownership.</p>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+        </div>
+      </a>
+      <a href="#programs" style="position:relative;flex:0 0 360px;min-height:590px;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;color:#fff">
+        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A modern office building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.68) 0%,rgba(9,13,16,0.45) 42%,rgba(9,13,16,0.2) 70%,rgba(9,13,16,0.45) 100%);pointer-events:none"></div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;padding:40px">
+          <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff">Commercial</div>
+          <p style="margin:16px 0 0;max-width:280px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Finance offices, retail units and warehouses, riba-free.</p>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+        </div>
+      </a>
+      <a href="#programs" style="position:relative;flex:0 0 360px;min-height:590px;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;color:#fff">
+        <img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Documents handed across a desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.78) 0%,rgba(9,13,16,0.6) 42%,rgba(9,13,16,0.42) 70%,rgba(9,13,16,0.6) 100%);pointer-events:none"></div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;padding:40px">
+          <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff">Residential Conversion</div>
+          <p style="margin:16px 0 0;max-width:280px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Replace a conventional interest-bearing mortgage with ownership.</p>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+        </div>
+      </a>
+      <a href="#programs" style="position:relative;flex:0 0 360px;min-height:590px;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;color:#fff">
+        <img src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A row of parked cars" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.68) 0%,rgba(9,13,16,0.45) 42%,rgba(9,13,16,0.2) 70%,rgba(9,13,16,0.45) 100%);pointer-events:none"></div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;padding:40px">
+          <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff">Auto Conversion</div>
+          <p style="margin:16px 0 0;max-width:280px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Move an existing interest-bearing auto loan onto a riba-free footing.</p>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+        </div>
+      </a>
+      <a href="#programs" style="position:relative;flex:0 0 360px;min-height:590px;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;color:#fff">
+        <img src="https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A desk of financial statements" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.68) 0%,rgba(9,13,16,0.45) 42%,rgba(9,13,16,0.2) 70%,rgba(9,13,16,0.45) 100%);pointer-events:none"></div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;padding:40px">
+          <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff">Investment Opportunities</div>
+          <p style="margin:16px 0 0;max-width:280px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Participate in offerings structured to keep interest out.</p>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+        </div>
+      </a>
+      <a href="#programs" style="position:relative;flex:0 0 360px;min-height:590px;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;color:#fff">
+        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Hands together over a workspace" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,16,0.68) 0%,rgba(9,13,16,0.45) 42%,rgba(9,13,16,0.2) 70%,rgba(9,13,16,0.45) 100%);pointer-events:none"></div>
+        <div style="position:relative;flex:1;display:flex;flex-direction:column;padding:40px">
+          <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600;color:#fff">Partner Broker</div>
+          <p style="margin:16px 0 0;max-width:280px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Bring your clients riba-free financing through the ijaraCDC broker program.</p>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="about-why" style="padding:96px 32px;background:var(--surface-sunken)">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:96px;align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="shield-check" stroke-width="1.75" style="width:14px;height:14px"></i>Why choose ijara CDC</div>
+        <h2 style="margin:24px 0 0;font-size:42px;line-height:1.08;letter-spacing:-1.7px;font-weight:600">Why Families Choose IjaraCDC</h2>
+        <p style="margin:24px 0 0;max-width:460px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">Finding the right way to fund a property for a family or a business is difficult. ijara CDC eases that decision with interest-free alternatives, and has served the Muslim community across the USA and Canada since 2005.</p>
+        <div style="margin-top:48px;padding:32px;border-radius:24px;background:#fff">
+          <div style="display:flex;align-items:center;padding-left:14px"><span style="width:44px;height:44px;border-radius:100px;border:2px solid #fff;background-image:url('https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200');background-size:cover;background-position:center;margin-left:-14px;display:block"></span><span style="width:44px;height:44px;border-radius:100px;border:2px solid #fff;background-image:url('https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200');background-size:cover;background-position:center;margin-left:-14px;display:block"></span><span style="width:44px;height:44px;border-radius:100px;border:2px solid #fff;background-image:url('https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200');background-size:cover;background-position:center;margin-left:-14px;display:block"></span><span style="width:44px;height:44px;border-radius:100px;border:2px solid #fff;background-image:url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200');background-size:cover;background-position:center;margin-left:-14px;display:block"></span><span style="width:28px;height:28px;border-radius:100px;background:var(--color-success-soft);display:flex;align-items:center;justify-content:center;color:var(--brand-green);margin-left:6px"><i data-lucide="badge-check" stroke-width="1.75" style="width:16px;height:16px"></i></span></div>
+          <div style="margin-top:24px;font-size:20px;font-weight:600;line-height:1.35">Twenty years of riba-free home and business ownership</div>
+          <div style="margin-top:12px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">Families, business owners and investors across the USA and Canada</div>
+
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:32px;padding:24px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:24px 28px;border-radius:24px;background:var(--surface-sunken)">
+            <i data-lucide="circle-check" stroke-width="1.75" style="width:22px;height:22px;flex:none;margin-top:2px;color:var(--brand-green)"></i>
+            <span style="font-size:16px;font-weight:600;line-height:1.4">Sharia-compliant, interest-free (riba-free) financing since 2005</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:24px 28px;border-radius:24px;background:var(--surface-sunken)">
+            <i data-lucide="circle-check" stroke-width="1.75" style="width:22px;height:22px;flex:none;margin-top:2px;color:var(--brand-green)"></i>
+            <span style="font-size:16px;font-weight:600;line-height:1.4">No Credit Program — own a home without an established credit history</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:24px 28px;border-radius:24px;background:var(--surface-sunken)">
+            <i data-lucide="circle-check" stroke-width="1.75" style="width:22px;height:22px;flex:none;margin-top:2px;color:var(--brand-green)"></i>
+            <span style="font-size:16px;font-weight:600;line-height:1.4">Low Credit Program — a low credit score is not a barrier</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:24px 28px;border-radius:24px;background:var(--surface-sunken)">
+            <i data-lucide="circle-check" stroke-width="1.75" style="width:22px;height:22px;flex:none;margin-top:2px;color:var(--brand-green)"></i>
+            <span style="font-size:16px;font-weight:600;line-height:1.4">Down Payment Assistance — up to a 3.5% grant toward your down payment</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:24px 28px;border-radius:24px;background:var(--surface-sunken)">
+            <i data-lucide="circle-check" stroke-width="1.75" style="width:22px;height:22px;flex:none;margin-top:2px;color:var(--brand-green)"></i>
+            <span style="font-size:16px;font-weight:600;line-height:1.4">USDA 100% financing for homes in USDA-designated areas</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:24px 28px;border-radius:24px;background:var(--surface-sunken)">
+            <i data-lucide="circle-check" stroke-width="1.75" style="width:22px;height:22px;flex:none;margin-top:2px;color:var(--brand-green)"></i>
+            <span style="font-size:16px;font-weight:600;line-height:1.4">VA Program — housing offers available to veterans</span>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" style="padding:96px 32px;background:var(--surface-sunken)">
+    <div style="max-width:1280px;margin:0 auto;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="clock" stroke-width="1.75" style="width:14px;height:14px"></i>How it works</div>
+      <h2 style="margin: 24px 0 0; font-size: 42px; line-height: 1.06; letter-spacing: -2.08px; font-weight: 600">How ijara works</h2>
+      <p style="margin:16px auto 0;max-width:560px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">A co op of investors buys the property on your behalf and leases it to you until ownership transfers, riba free.</p>
+
+      <div style="margin-top:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px">
+        <div style="border-radius:24px;padding:40px 32px;background:#fff;border:1px solid var(--color-border-strong);text-align:center">
+          <div style="width:72px;height:72px;margin:0 auto;border-radius:100px;background:var(--brand-green);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="file-pen-line" stroke-width="1.75" style="width:28px;height:28px"></i></div>
+          <div style="margin-top:32px;font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600">We buy it together.</div>
+          <p style="margin:16px auto 0;max-width:320px;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty">You pick the home. A trust buys it outright using your contribution plus investor capital. No money is loaned-a property is bought.</p>
+        </div>
+        <div style="border-radius:24px;padding:40px 32px;background:#fff;border:1px solid var(--color-border-strong);text-align:center">
+          <div style="width:72px;height:72px;margin:0 auto;border-radius:100px;background:var(--brand-green);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="users" stroke-width="1.75" style="width:28px;height:28px"></i></div>
+          <div style="margin-top:32px;font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600">You rent &amp; buy in</div>
+          <p style="margin:16px auto 0;max-width:320px;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty">Each month you pay rent on the share you don't own yet, plus an equity payment. As your share grows, the rent shrinks.</p>
+        </div>
+        <div style="border-radius:24px;padding:40px 32px;background:#fff;border:1px solid var(--color-border-strong);text-align:center">
+          <div style="width:72px;height:72px;margin:0 auto;border-radius:100px;background:var(--brand-green);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="key-round" stroke-width="1.75" style="width:28px;height:28px"></i></div>
+          <div style="margin-top:32px;font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600">The title become yours</div>
+          <p style="margin:16px auto 0;max-width:320px;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty">Once you have bought out the remaining share, the deed transfers. No interest ever charged, no penalty for finishing early.&nbsp;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" style="padding:96px 32px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="text-align:center">
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="folder-open" stroke-width="1.75" style="width:14px;height:14px"></i>Portfolio</div>
+        <h2 style="margin:24px auto 0;max-width:700px;font-size:42px;line-height:1.06;letter-spacing:-2.08px;font-weight:600;text-wrap:pretty">Real families. Real businesses. Real ownership, zero interest.</h2>
+        <div style="margin-top:32px;display:flex;justify-content:center">
+          <a href="#portfolio" style="display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600" style-hover="background:var(--brand-green-dark)">All case studies<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+        </div>
+      </div>
+
+      <div style="margin-top:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <div style="position:relative;border-radius:24px;overflow:hidden;height:400px;background:var(--slate-100)">
+          <video src="https://www.pexels.com/download/video/7643839/" autoplay="{{ yes }}" muted="{{ yes }}" loop="{{ yes }}" playsinline="{{ yes }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <div style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,0.92);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;pointer-events:none">Residential home</div>
+          <button type="button" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border:none;border-radius:100px;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark);cursor:pointer;box-shadow:var(--shadow-card)" style-hover="background:#fff"><i data-lucide="play" stroke-width="1.75" style="width:24px;height:24px"></i></button>
+        </div>
+        <div style="position:relative;border-radius:24px;overflow:hidden;height:400px;background:var(--slate-100)">
+          <video src="https://www.pexels.com/download/video/5442623/" autoplay="{{ yes }}" muted="{{ yes }}" loop="{{ yes }}" playsinline="{{ yes }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <div style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,0.92);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;pointer-events:none">Commercial property</div>
+          <button type="button" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border:none;border-radius:100px;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark);cursor:pointer;box-shadow:var(--shadow-card)" style-hover="background:#fff"><i data-lucide="play" stroke-width="1.75" style="width:24px;height:24px"></i></button>
+        </div>
+        <div style="position:relative;border-radius:24px;overflow:hidden;height:400px;background:var(--slate-100)">
+          <video src="https://www.pexels.com/download/video/8724242/" autoplay="{{ yes }}" muted="{{ yes }}" loop="{{ yes }}" playsinline="{{ yes }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <div style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,0.92);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;pointer-events:none">Mosque financing</div>
+          <button type="button" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border:none;border-radius:100px;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark);cursor:pointer;box-shadow:var(--shadow-card)" style-hover="background:#fff"><i data-lucide="play" stroke-width="1.75" style="width:24px;height:24px"></i></button>
+        </div>
+        <div style="position:relative;border-radius:24px;overflow:hidden;height:400px;background:var(--slate-100)">
+          <video src="https://www.pexels.com/download/video/7262257/" autoplay="{{ yes }}" muted="{{ yes }}" loop="{{ yes }}" playsinline="{{ yes }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <div style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,0.92);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;pointer-events:none">Mortgage conversion</div>
+          <button type="button" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border:none;border-radius:100px;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;color:var(--brand-green-dark);cursor:pointer;box-shadow:var(--shadow-card)" style-hover="background:#fff"><i data-lucide="play" stroke-width="1.75" style="width:24px;height:24px"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+  <section id="testimonials" style="padding:96px 32px;background:var(--surface-sunken)">
+    <div style="max-width:1280px;margin:0 auto;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="quote" stroke-width="1.75" style="width:14px;height:14px"></i>Testimonials</div>
+      <h2 style="margin:24px auto 0;max-width:620px;font-size:42px;line-height:1.06;letter-spacing:-2.08px;font-weight:600">Real Families. Real Journeys.</h2>
+    </div>
+
+    <div style="margin-top:72px;max-width:1280px;margin-left:auto;margin-right:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:stretch;text-align:left;min-height:700px">
+      <div style="display:flex;flex-direction:column;gap:24px;height:100%">
+        <div style="flex:none;background:#fff;border:1px solid var(--color-border-strong);border-radius:24px;padding:24px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="flex:none;width:44px;height:44px;border-radius:100px;overflow:hidden;background:var(--slate-200)"><img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200" alt="Amina Yusuf" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="flex:1;min-width:0"><div style="font-size:18px;font-weight:600;letter-spacing:-0.3px;color:var(--color-text)">Amina Yusuf</div><div style="margin-top:2px;font-size:14px;color:var(--color-text-secondary)">Homeowner, Michigan</div></div>
+            <div style="display:flex;gap:4px;color:var(--brand-green)"><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i></div>
+          </div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--color-border);font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty">We closed on a halal lease to own contract in under a month. Every step of the contract was explained before we signed anything.</div>
+        </div>
+        <div style="position:relative;border-radius:24px;overflow:hidden;flex:1;min-height:320px;background:var(--slate-100)">
+          <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Client portrait" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;height:100%">
+        <div style="position:relative;border-radius:24px;overflow:hidden;flex:1;min-height:320px;background:var(--slate-100)">
+          <img src="https://images.pexels.com/photos/6326063/pexels-photo-6326063.jpeg" alt="Client portrait" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+        </div>
+        <div style="flex:none;background:#fff;border:1px solid var(--color-border-strong);border-radius:24px;padding:24px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="flex:none;width:44px;height:44px;border-radius:100px;overflow:hidden;background:var(--slate-200)"><img src="https://images.pexels.com/photos/6326063/pexels-photo-6326063.jpeg" alt="Bilal Rahman" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="flex:1;min-width:0"><div style="font-size:18px;font-weight:600;letter-spacing:-0.3px;color:var(--color-text)">Bilal Rahman</div><div style="margin-top:2px;font-size:14px;color:var(--color-text-secondary)">Business owner, Ontario</div></div>
+            <div style="display:flex;gap:4px;color:var(--brand-green)"><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i></div>
+          </div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--color-border);font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty">ijaraCDC financed our mixed use building with no interest at any point. The team understood what we needed as&nbsp; a business.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;height:100%">
+        <div style="flex:none;background:#fff;border:1px solid var(--color-border-strong);border-radius:24px;padding:24px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="flex:none;width:44px;height:44px;border-radius:100px;overflow:hidden;background:var(--slate-200)"><img src="https://images.pexels.com/photos/7316746/pexels-photo-7316746.jpeg" alt="Fatima Siddiqui" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="flex:1;min-width:0"><div style="font-size:18px;font-weight:600;letter-spacing:-0.3px;color:var(--color-text)">Fatima Siddiqui</div><div style="margin-top:2px;font-size:14px;color:var(--color-text-secondary)">Homeowner, Texas</div></div>
+            <div style="display:flex;gap:4px;color:var(--brand-green)"><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i><i data-lucide="star" fill="currentColor" stroke-width="1.75" style="width:14px;height:14px"></i></div>
+          </div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--color-border);font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty">We moved out of a conventional mortgage into a halal contract without losing our home. That was the whole reason we called.</div>
+        </div>
+        <div style="position:relative;border-radius:24px;overflow:hidden;flex:1;min-height:320px;background:var(--slate-100)">
+          <img src="https://images.pexels.com/photos/7316746/pexels-photo-7316746.jpeg" alt="Client portrait" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" style="position:relative;overflow:hidden;padding:120px 0 0;background:var(--brand-green-light)">
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 32px;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:#fff;color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="smartphone" stroke-width="1.75" style="width:14px;height:14px"></i>Ijara 360 app</div>
+      <h2 style="margin:24px auto 0;max-width:780px;font-size:52px;line-height:1.06;letter-spacing:-2.08px;font-weight:600;color:#fff;text-wrap:pretty">Perfect your deen anytime, anywhere.</h2>
+      <p style="margin:24px auto 0;max-width:600px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.9)">Ijara 360 gives you azan timings, the Quran, the Qibla direction and the Ijara and Zakat calculators — all in one free app.</p>
+      <div style="margin-top:40px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px">
+        <a href="#app" style="display:block"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:54px;width:auto;display:block"></a>
+        <a href="#app" style="display:block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:80px;width:auto;display:block"></a>
+      </div>
+    </div>
+
+    <div style="position:relative;margin-top:72px;padding:0 32px;display:flex;justify-content:center">
+      <div style="position:relative;width:100%;max-width:1080px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;row-gap:24px;column-gap:16px">
+        <div style="flex:1 1 220px;min-width:0;max-width:260px;align-self:center;display:flex;flex-direction:column;gap:12px;align-items:flex-end;z-index:5">
+          
+          <div style="display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:#fff;color:var(--color-text);font-size:13px;font-weight:600;box-shadow:var(--shadow-card);max-width:100%;box-sizing:border-box"><i data-lucide="users" stroke-width="1.75" style="width:16px;height:16px;color:var(--brand-green)"></i>1,000+ families financed</div><div style="display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:#fff;color:var(--color-text);font-size:13px;font-weight:600;box-shadow:var(--shadow-card);max-width:100%;box-sizing:border-box"><i data-lucide="shield-check" stroke-width="1.75" style="width:16px;height:16px;color:var(--brand-green)"></i>Riba-free since 2005</div>
+        </div>
+        <div style="flex:none;position:relative;z-index:3;margin-right:-64px;transform:translateY(48px)">
+          <div style="position:relative;width:320px;border-radius:52px 52px 0 0;padding:11px;padding-bottom:0;background:linear-gradient(150deg,#9aa2ac 0%,#3a4149 20%,#20262c 58%,#6b737c 100%);box-shadow:0 40px 90px rgba(9,13,16,0.32)">
+            <div style="position:absolute;left:-3px;top:110px;width:3px;height:24px;border-radius:4px 0 0 4px;background:#6b737c"></div>
+            <div style="position:absolute;left:-3px;top:152px;width:3px;height:44px;border-radius:4px 0 0 4px;background:#6b737c"></div>
+            <div style="position:absolute;left:-3px;top:206px;width:3px;height:44px;border-radius:4px 0 0 4px;background:#6b737c"></div>
+            <div style="position:absolute;right:-3px;top:164px;width:3px;height:66px;border-radius:0 4px 4px 0;background:#6b737c"></div>
+            <div style="position:relative;border-radius:42px 42px 0 0;overflow:hidden;background:#000;padding:2px;padding-bottom:0">
+              <div style="position:relative;height:540px;border-radius:40px 40px 0 0;overflow:hidden;background:var(--surface-sunken);display:flex;flex-direction:column">
+                <div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:92px;height:26px;border-radius:100px;background:#000;z-index:9;pointer-events:none"></div>
+            <div style="background:var(--brand-green-light);padding:46px 20px 20px;text-align:center;border-radius:0 0 26px 26px">
+              <div style="display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:13px;font-weight:600">
+                <span>9:41</span>
+                <span style="display:flex;align-items:center;gap:5px"><i data-lucide="signal" stroke-width="2.25" style="width:13px;height:13px"></i><i data-lucide="wifi" stroke-width="2.25" style="width:13px;height:13px"></i><i data-lucide="battery-full" stroke-width="2.25" style="width:17px;height:17px"></i></span>
+              </div>
+              <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;color:#fff">
+                <i data-lucide="menu" stroke-width="1.75" style="width:18px;height:18px"></i>
+                <div style="padding:7px 14px;border-radius:100px;background:#fff"><img src="assets/ijara-cdc-logo.png" alt="ijara CDC" style="height:17px;width:auto;display:block"></div>
+                <i data-lucide="globe" stroke-width="1.75" style="width:18px;height:18px"></i>
+              </div>
+              <div style="margin-top:18px;font-size:13px;color:rgba(255,255,255,0.92)">Fajr</div>
+              <div style="margin-top:4px;font-size:30px;font-weight:600;letter-spacing:-1px;color:var(--brand-green-dark)">05:07 AM</div>
+              <div style="margin-top:8px;font-size:12px;color:#fff">Next Azan <span style="color:var(--brand-orange)">Fajr</span> in <span style="color:var(--brand-orange)">03 : 27</span></div>
+            </div>
+            <div style="padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+              <div style="background:var(--surface-sunken);border-radius:12px;padding:11px 6px;display:flex;flex-direction:column;align-items:center;gap:6px"><i data-lucide="compass" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green)"></i><span style="font-size:10px;font-weight:600;line-height:1.25;text-align:center;color:var(--color-text)">Qibla Direction</span></div>
+              <div style="background:var(--surface-sunken);border-radius:12px;padding:11px 6px;display:flex;flex-direction:column;align-items:center;gap:6px"><i data-lucide="clock" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green)"></i><span style="font-size:10px;font-weight:600;line-height:1.25;text-align:center;color:var(--color-text)">Azan Timing</span></div>
+              <div style="background:var(--surface-sunken);border-radius:12px;padding:11px 6px;display:flex;flex-direction:column;align-items:center;gap:6px"><i data-lucide="book-open" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green)"></i><span style="font-size:10px;font-weight:600;line-height:1.25;text-align:center;color:var(--color-text)">Al Quran</span></div>
+              <div style="background:var(--surface-sunken);border-radius:12px;padding:11px 6px;display:flex;flex-direction:column;align-items:center;gap:6px"><i data-lucide="sparkles" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green)"></i><span style="font-size:10px;font-weight:600;line-height:1.25;text-align:center;color:var(--color-text)">99 Names</span></div>
+              <div style="background:var(--surface-sunken);border-radius:12px;padding:11px 6px;display:flex;flex-direction:column;align-items:center;gap:6px"><i data-lucide="calculator" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green)"></i><span style="font-size:10px;font-weight:600;line-height:1.25;text-align:center;color:var(--color-text)">Ijara Calculator</span></div>
+              <div style="background:var(--surface-sunken);border-radius:12px;padding:11px 6px;display:flex;flex-direction:column;align-items:center;gap:6px"><i data-lucide="hand-coins" stroke-width="1.75" style="width:20px;height:20px;color:var(--brand-green)"></i><span style="font-size:10px;font-weight:600;line-height:1.25;text-align:center;color:var(--color-text)">Zakat Calculator</span></div>
+            </div>
+            <div style="margin:12px;padding:12px;border-radius:22px;background:var(--brand-green-light);display:grid;grid-template-columns:repeat(4,1fr);flex:none">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--brand-green-dark)"><i data-lucide="home" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Home</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.85)"><i data-lucide="book-open" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Quran</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.85)"><i data-lucide="bell" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Azan</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.85)"><i data-lucide="compass" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Qibla</span></div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:none;position:relative;z-index:2">
+          <div style="position:relative;width:320px;border-radius:52px 52px 0 0;padding:11px;padding-bottom:0;background:linear-gradient(150deg,#9aa2ac 0%,#3a4149 20%,#20262c 58%,#6b737c 100%);box-shadow:0 40px 90px rgba(9,13,16,0.32)">
+            <div style="position:absolute;left:-3px;top:110px;width:3px;height:24px;border-radius:4px 0 0 4px;background:#6b737c"></div>
+            <div style="position:absolute;left:-3px;top:152px;width:3px;height:44px;border-radius:4px 0 0 4px;background:#6b737c"></div>
+            <div style="position:absolute;left:-3px;top:206px;width:3px;height:44px;border-radius:4px 0 0 4px;background:#6b737c"></div>
+            <div style="position:absolute;right:-3px;top:164px;width:3px;height:66px;border-radius:0 4px 4px 0;background:#6b737c"></div>
+            <div style="position:relative;border-radius:42px 42px 0 0;overflow:hidden;background:#000;padding:2px;padding-bottom:0">
+              <div style="position:relative;height:600px;border-radius:40px 40px 0 0;overflow:hidden;background:var(--surface-sunken);display:flex;flex-direction:column">
+                <div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:92px;height:26px;border-radius:100px;background:#000;z-index:9;pointer-events:none"></div>
+            <div style="background:var(--brand-green-light);padding:46px 20px 0">
+              <div style="display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:13px;font-weight:600">
+                <span>9:41</span>
+                <span style="display:flex;align-items:center;gap:5px"><i data-lucide="signal" stroke-width="2.25" style="width:13px;height:13px"></i><i data-lucide="wifi" stroke-width="2.25" style="width:13px;height:13px"></i><i data-lucide="battery-full" stroke-width="2.25" style="width:17px;height:17px"></i></span>
+              </div>
+              <div style="margin-top:18px;position:relative;display:flex;align-items:center;justify-content:center">
+                <span style="font-size:18px;font-weight:600;letter-spacing:-0.4px;color:#fff">Al Quran</span>
+                <i data-lucide="bookmark" stroke-width="1.75" style="width:18px;height:18px;color:var(--brand-orange);position:absolute;right:0"></i>
+              </div>
+              <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;text-align:center">
+                <div style="padding-bottom:10px;border-bottom:3px solid #fff;display:flex;flex-direction:column;align-items:center;gap:6px;color:#fff"><i data-lucide="sparkles" stroke-width="1.75" style="width:20px;height:20px"></i><span style="font-size:13px;font-weight:600">Surah</span></div>
+                <div style="padding-bottom:10px;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,0.8)"><i data-lucide="layout-grid" stroke-width="1.75" style="width:20px;height:20px"></i><span style="font-size:13px;font-weight:600">Juz</span></div>
+              </div>
+            </div>
+            <div style="flex:1;min-height:0;overflow:hidden;padding:16px 16px 0">
+              <div style="display:flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid var(--color-border-strong);color:var(--color-text-tertiary)"><i data-lucide="search" stroke-width="1.75" style="width:16px;height:16px"></i><span style="font-size:14px">Search Surah</span></div>
+              <div style="margin-top:12px;padding:4px 16px;border-radius:16px;background:#fff">
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-border)">
+                  <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:var(--color-text)">1. Al Fatiha</div><div style="margin-top:2px;font-size:12px;color:var(--color-text-secondary)">Makkah - 7 Verses</div></div>
+                  <div style="font-size:15px;font-weight:600;color:var(--color-text)">الفاتحة</div>
+                  <div style="flex:none;width:26px;height:26px;border-radius:100px;background:var(--brand-green-light);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="play" stroke-width="2.25" style="width:12px;height:12px"></i></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-border)">
+                  <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:var(--color-text)">2. Al Baqarah</div><div style="margin-top:2px;font-size:12px;color:var(--color-text-secondary)">Madinah - 286 Verses</div></div>
+                  <div style="font-size:15px;font-weight:600;color:var(--color-text)">البقرة</div>
+                  <div style="flex:none;width:26px;height:26px;border-radius:100px;background:var(--brand-green-light);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="play" stroke-width="2.25" style="width:12px;height:12px"></i></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-border)">
+                  <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:var(--color-text)">3. Al Imran</div><div style="margin-top:2px;font-size:12px;color:var(--color-text-secondary)">Madinah - 200 Verses</div></div>
+                  <div style="font-size:15px;font-weight:600;color:var(--color-text)">آل عمران</div>
+                  <div style="flex:none;width:26px;height:26px;border-radius:100px;background:var(--brand-green-light);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="play" stroke-width="2.25" style="width:12px;height:12px"></i></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-border)">
+                  <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:var(--color-text)">4. An Nisa</div><div style="margin-top:2px;font-size:12px;color:var(--color-text-secondary)">Madinah - 176 Verses</div></div>
+                  <div style="font-size:15px;font-weight:600;color:var(--color-text)">النساء</div>
+                  <div style="flex:none;width:26px;height:26px;border-radius:100px;background:var(--brand-green-light);display:flex;align-items:center;justify-content:center;color:#fff"><i data-lucide="play" stroke-width="2.25" style="width:12px;height:12px"></i></div>
+                </div>
+              </div>
+            </div>
+            <div style="margin:12px;padding:12px;border-radius:22px;background:var(--brand-green-light);display:grid;grid-template-columns:repeat(4,1fr);flex:none">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.85)"><i data-lucide="home" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Home</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--brand-green-dark)"><i data-lucide="book-open" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Quran</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.85)"><i data-lucide="bell" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Azan</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.85)"><i data-lucide="compass" stroke-width="1.75" style="width:18px;height:18px"></i><span style="font-size:10px;font-weight:600">Qibla</span></div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1 1 220px;min-width:0;max-width:260px;align-self:center;display:flex;flex-direction:column;gap:12px;align-items:flex-start;z-index:5">
+          <div style="display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:var(--brand-green-dark);color:#fff;font-size:13px;font-weight:600;box-shadow:var(--shadow-card);max-width:100%;box-sizing:border-box"><i data-lucide="globe" stroke-width="1.75" style="width:16px;height:16px;color:#fff"></i>English, Arabic, Urdu, French</div>
+          <div style="display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:#fff;color:var(--color-text);font-size:13px;font-weight:600;box-shadow:var(--shadow-card);max-width:100%;box-sizing:border-box"><i data-lucide="download" stroke-width="1.75" style="width:16px;height:16px;color:var(--brand-green)"></i>Free, no registration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" style="padding:96px 0;background:var(--surface-sunken)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="book-open" stroke-width="1.75" style="width:14px;height:14px"></i>Blog</div>
+      <h2 style="margin: 24px auto 0; max-width: 760px; font-size: 42px; line-height: 1.06; letter-spacing: -2.08px; font-weight: 600">Financing Insights &amp; Resources</h2>
+        <div style="margin-top:32px;display:flex;justify-content:center">
+          <a href="#blog" style="display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:100px;background:var(--brand-green);color:#fff;font-size:14px;font-weight:600" style-hover="background:var(--brand-green-dark)">See all blogs<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></a>
+        </div>
+    </div>
+
+    <div style="max-width:1280px;margin:72px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 32px;text-align:left">
+      <a href="#blog" style="display:flex;flex-direction:column;gap:20px;color:var(--color-text)">
+        <div style="position:relative;height:240px;border-radius:24px;overflow:hidden"><img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A family home lit at dusk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)"><span>Basics</span><span style="width:4px;height:4px;border-radius:100px;background:var(--brand-orange);display:block"></span><span>4 min read</span></div>
+          <div style="margin-top:12px;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;text-wrap:pretty">What declining-balance co-ownership actually means</div>
+          <div style="margin-top:12px;font-size:16px;color:var(--color-text-secondary)">Feb, 2026</div>
+        </div>
+      </a>
+      <a href="#blog" style="display:flex;flex-direction:column;gap:20px;color:var(--color-text)">
+        <div style="position:relative;height:240px;border-radius:24px;overflow:hidden"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Documents being handed across a desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)"><span>Refinancing</span><span style="width:4px;height:4px;border-radius:100px;background:var(--brand-orange);display:block"></span><span>6 min read</span></div>
+          <div style="margin-top:12px;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;text-wrap:pretty">Replacing an interest-bearing mortgage, step by step</div>
+          <div style="margin-top:12px;font-size:16px;color:var(--color-text-secondary)">Feb, 2026</div>
+        </div>
+      </a>
+      <a href="#blog" style="display:flex;flex-direction:column;gap:20px;color:var(--color-text)">
+        <div style="position:relative;height:240px;border-radius:24px;overflow:hidden"><img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A house with a for-sale sign on the lawn" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)"><span>Programs</span><span style="width:4px;height:4px;border-radius:100px;background:var(--brand-orange);display:block"></span><span>5 min read</span></div>
+          <div style="margin-top:12px;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;text-wrap:pretty">No Credit, Low Credit and Down Payment Assistance&nbsp;</div>
+          <div style="margin-top:12px;font-size:16px;color:var(--color-text-secondary)">Apr, 2025</div>
+        </div>
+      </a>
+      <a href="#blog" style="display:flex;flex-direction:column;gap:20px;color:var(--color-text)">
+        <div style="position:relative;height:240px;border-radius:24px;overflow:hidden"><img src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A house at dusk with warm windows" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)"><span>Applying</span><span style="width:4px;height:4px;border-radius:100px;background:var(--brand-orange);display:block"></span><span>3 min read</span></div>
+          <div style="margin-top:12px;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;text-wrap:pretty">What pre-qualification asks, and what it does not affect</div>
+          <div style="margin-top:12px;font-size:16px;color:var(--color-text-secondary)">Sep, 2025</div>
+        </div>
+      </a>
+      <a href="#blog" style="display:flex;flex-direction:column;gap:20px;color:var(--color-text)">
+        <div style="position:relative;height:240px;border-radius:24px;overflow:hidden"><img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A modern office building" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)"><span>Commercial</span><span style="width:4px;height:4px;border-radius:100px;background:var(--brand-orange);display:block"></span><span>7 min read</span></div>
+          <div style="margin-top:12px;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;text-wrap:pretty">Commercial co-ownership for business premises</div>
+          <div style="margin-top:12px;font-size:16px;color:var(--color-text-secondary)">Sep, 2025</div>
+        </div>
+      </a>
+      <a href="#blog" style="display:flex;flex-direction:column;gap:20px;color:var(--color-text)">
+        <div style="position:relative;height:240px;border-radius:24px;overflow:hidden"><img src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="A row of parked cars" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)"><span>Auto conversion</span><span style="width:4px;height:4px;border-radius:100px;background:var(--brand-orange);display:block"></span><span>5 min read</span></div>
+          <div style="margin-top:12px;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;text-wrap:pretty">Auto conversion, and how the share transfers</div>
+          <div style="margin-top:12px;font-size:16px;color:var(--color-text-secondary)">Jun, 2025</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  
+
+  
+
+  
+
+  
+
+  <section id="faq" style="padding:96px 32px;background:var(--surface-sunken)">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:96px;align-items:start">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="life-buoy" stroke-width="1.75" style="width:14px;height:14px"></i>Frequently asked questions</div>
+        <h2 style="margin:24px 0 0;max-width:440px;font-size:42px;line-height:1.08;letter-spacing:-1.7px;font-weight:600;text-wrap:pretty">Have more questions? Don't hesitate to reach us</h2>
+        <p style="margin:24px 0 0;max-width:400px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">Our team answers by phone or email during business hours, and a pre-qualification takes about ten minutes.</p>
+        
+      </div>
+
+      <div>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">How is this different from a mortgage?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">ijara CDC co-owns the property with you and sells you its share over time. There is no interest, because there is no debt instrument — the agreement transfers ownership, not money at a rate.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">What does a monthly payment cover?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">Two parts: your use of the share ijara CDC still owns, and the purchase of an additional slice of that share. The second part grows as your ownership grows.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">How long does pre-qualification take?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">About ten minutes, and it does not affect your credit.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">Can I pay off my share early?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">Yes. Additional payments buy more of the co-owned share and carry no penalty.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">Which states does ijara CDC serve?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">More than 20 states across the USA, alongside Canada. Contact us for the current list and the requirements where you live.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">Who reviews the contracts?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">The Sharia Advisory Board and real estate counsel review the structure and the documents before signing.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--color-divider)">
+          <summary style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding:24px 0;font-size:18px;font-weight:600;letter-spacing:-0.3px">What can I finance?<span class="faq-chev" style="flex:none;display:flex;color:var(--color-text-secondary);transition:transform 200ms cubic-bezier(0.4,0,0.2,1)"><i data-lucide="plus" stroke-width="1.75" style="width:20px;height:20px"></i></span></summary>
+          <p style="margin:-8px 0 24px;font-size:16px;line-height:1.55;color:var(--color-text-secondary)">Residential and commercial property, residential and auto conversions, investment opportunities, and the ijaraCDC partner broker program.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="position:relative;overflow:hidden;padding:96px 32px;min-height:760px;display:flex;align-items:center">
+    <img src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="A family home at dusk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <div style="position: absolute; inset: 0; pointer-events: none; background: url(&quot;./lissete-laverde-7oftxbgwqwk-unsplash-1-mt6xdy0v-q9mo.png&quot;) center / cover no-repeat"></div>
+
+    <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:64px;align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--color-success-soft);color:var(--brand-green-dark);font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase"><i data-lucide="phone" stroke-width="1.75" style="width:14px;height:14px"></i>Contact us</div>
+        <h2 style="margin:24px 0 0;max-width:520px;font-size:42px;line-height:1.08;letter-spacing:-1.7px;font-weight:600;color:#fff;text-wrap:pretty">Let's talk about your home financing</h2>
+        
+        <p style="margin:16px 0 0;max-width:440px;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.85)">Have questions about Ijara, our financing programs, or your application? Our team is here to help. Reach out to us and we’ll guide you through the next steps.</p>
+        
+        
+      </div>
+
+      <div style="justify-self:end;width:100%;max-width:520px;border-radius:24px;padding:32px;background:#fff;box-shadow:var(--shadow-card)">
+        <div style="font-size:28px;line-height:1.15;letter-spacing:-0.9px;font-weight:600">Tell us a little about you.</div>
+
+        <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px">
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)">First name</label>
+            <input type="text" placeholder="Aisha" style="margin-top:8px;width:100%;box-sizing:border-box;padding:10px 14px;border-radius:12px;border:1px solid var(--color-border-strong);background:var(--surface-sunken);font-family:Poppins,sans-serif;font-size:14px;font-weight:500;color:var(--color-text);outline:none">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)">Last name</label>
+            <input type="text" placeholder="Rahman" style="margin-top:8px;width:100%;box-sizing:border-box;padding:10px 14px;border-radius:12px;border:1px solid var(--color-border-strong);background:var(--surface-sunken);font-family:Poppins,sans-serif;font-size:14px;font-weight:500;color:var(--color-text);outline:none">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)">Email</label>
+            <input type="email" placeholder="aisha@example.com" style="margin-top:8px;width:100%;box-sizing:border-box;padding:10px 14px;border-radius:12px;border:1px solid var(--color-border-strong);background:var(--surface-sunken);font-family:Poppins,sans-serif;font-size:14px;font-weight:500;color:var(--color-text);outline:none">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)">Phone <span style="text-transform:none;letter-spacing:normal;font-weight:500;color:var(--color-text-tertiary)">(optional)</span></label>
+            <input type="tel" placeholder="(555) 555 0123" style="margin-top:8px;width:100%;box-sizing:border-box;padding:10px 14px;border-radius:12px;border:1px solid var(--color-border-strong);background:var(--surface-sunken);font-family:Poppins,sans-serif;font-size:14px;font-weight:500;color:var(--color-text);outline:none">
+          </div>
+        </div>
+
+        <div style="margin-top:32px">
+          <div style="font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--color-text-secondary)">I'm interested in</div>
+          <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
+            <button type="button" style="padding:8px 16px;border-radius:100px;border:1px solid transparent;background:var(--brand-green);color:#fff;font-family:Poppins,sans-serif;font-size:13px;font-weight:600;cursor:pointer">Residential</button>
+            <button type="button" style="padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-family:Poppins,sans-serif;font-size:13px;font-weight:600;cursor:pointer">Commercial</button>
+            <button type="button" style="padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-family:Poppins,sans-serif;font-size:13px;font-weight:600;cursor:pointer">Conversion</button>
+            <button type="button" style="padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-family:Poppins,sans-serif;font-size:13px;font-weight:600;cursor:pointer">Nonprofit</button>
+            <button type="button" style="padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-family:Poppins,sans-serif;font-size:13px;font-weight:600;cursor:pointer">Investing</button>
+            <button type="button" style="padding:8px 16px;border-radius:100px;border:1px solid var(--color-border-strong);background:#fff;color:var(--color-text);font-family:Poppins,sans-serif;font-size:13px;font-weight:600;cursor:pointer">Other</button>
+          </div>
+        </div>
+
+        
+
+        <div style="margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;gap:24px">
+          <button type="button" style="display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border:none;border-radius:100px;background:var(--brand-green);color:#fff;font-family:Poppins,sans-serif;font-size:14px;font-weight:600;cursor:pointer" style-hover="background:var(--brand-green-dark)">Get started<i data-lucide="arrow-right" stroke-width="1.75" style="width:16px;height:16px"></i></button>
+          <div style="font-size: 14px; color: var(--color-text-secondary)">Prefer to talk? <a href="tel:+18774505434" style="font-weight:600">877-450-5434</a></div>
+        </div>
+        <div style="margin-top:24px;font-size:14px;color:var(--color-text-secondary)">By submitting you agree to our <a href="#legal" style="font-weight:600">Privacy Policy</a>.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--surface-card-inverse);color:#fff;padding:56px 32px 32px">
+    <div style="max-width:1440px;margin:0 auto">
+      <div style="position:relative;border-radius:12px;overflow:hidden;min-height:400px;height:400px;display:flex;align-items:center;justify-content:center">
+        <div style="position:absolute;inset:0"><image-slot id="closing-bg" src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" shape="rect" fit="cover" placeholder="Home exterior photograph, warm daylight"></image-slot></div>
+        <div style="position: absolute; inset: 0; background: url(&quot;./chatgpt-image-aug-21-2026-02_23_07-pm-1-mt2rfoxn-gqqa.png&quot;) center / cover no-repeat; pointer-events: none"></div>
+        
+        <div style="position:relative;text-align:center;padding:96px 32px">
+          <h2 style="margin: 0; max-width: 640px; font-size: 52px; line-height: 1.06; letter-spacing: -2.08px; font-weight: 600; color: var(--slate-900)">Riba-free ownership starts here</h2>
+          <div style="margin-top:40px;display:flex;justify-content:center">
+            <a href="Apply.dc.html" style="display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 24px; color: var(--color-white); font-size: 14px; font-weight: 600; background-color: var(--slate-900)">{{ ctaLabel }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:120px 40px 0">
+        <div style="display:grid;grid-template-columns:1.4fr repeat(4,minmax(0,1fr));gap:32px;align-items:start">
+          <div>
+            <img src="assets/ijara-cdc-logo.png" alt="ijara Community Development Corp." style="height:56px;width:auto;filter:brightness(0) invert(1)">
+            <div style="margin-top:40px;display:flex;gap:32px">
+          <a href="#social" style="color:var(--brand-green-light);display:flex;align-items:center"><i data-lucide="linkedin" stroke-width="1.75" style="width:20px;height:20px"></i></a>
+          <a href="#social" style="color:var(--brand-green-light);display:flex;align-items:center"><i data-lucide="instagram" stroke-width="1.75" style="width:20px;height:20px"></i></a>
+          <a href="#social" style="color:var(--brand-green-light);display:flex;align-items:center"><i data-lucide="youtube" stroke-width="1.75" style="width:20px;height:20px"></i></a>
+          <a href="#social" style="color:var(--brand-green-light);display:flex;align-items:center"><i data-lucide="facebook" stroke-width="1.75" style="width:20px;height:20px"></i></a>
+            </div>
+          </div>
+        <div>
+          <div style="font-size:16px;font-weight:600;color:var(--brand-green-light);margin-bottom:32px">Programs</div>
+          <div style="display:flex;flex-direction:column;gap:20px;font-size:16px">
+            <a href="#programs" style="color:rgba(255,255,255,0.85)">Residential</a>
+            <a href="#programs" style="color:rgba(255,255,255,0.85)">Commercial</a>
+            <a href="#programs" style="color:rgba(255,255,255,0.85)">Auto Conversion</a>
+            <a href="#programs" style="color:rgba(255,255,255,0.85)">Residential Conversion</a>
+            <a href="#programs" style="color:rgba(255,255,255,0.85)">Investment Opportunities</a>
+            <a href="#programs" style="color:rgba(255,255,255,0.85)">Partner Broker</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:16px;font-weight:600;color:var(--brand-green-light);margin-bottom:32px">Apply</div>
+          <div style="display:flex;flex-direction:column;gap:20px;font-size:16px">
+            <a href="Apply.dc.html" style="color:rgba(255,255,255,0.85)">Pre-qualification</a>
+            <a href="Apply.dc.html" style="color:rgba(255,255,255,0.85)">Full application</a>
+            <a href="#contact" style="color:rgba(255,255,255,0.85)">Talk to our team</a>
+            <a href="#steps" style="color:rgba(255,255,255,0.85)">How it works</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:16px;font-weight:600;color:var(--brand-green-light);margin-bottom:32px">Resources</div>
+          <div style="display:flex;flex-direction:column;gap:20px;font-size:16px">
+            <a href="#blog" style="color:rgba(255,255,255,0.85)">Blog</a>
+            <a href="#app" style="color:rgba(255,255,255,0.85)">Ijara 360 app</a>
+            <a href="#faq" style="color:rgba(255,255,255,0.85)">Help center</a>
+            <a href="#blog" style="color:rgba(255,255,255,0.85)">Guides</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:16px;font-weight:600;color:var(--brand-green-light);margin-bottom:32px">Company</div>
+          <div style="display:flex;flex-direction:column;gap:20px;font-size:16px">
+            <a href="#about-us" style="color:rgba(255,255,255,0.85)">About us</a>
+            <a href="#steps" style="color:rgba(255,255,255,0.85)">How ijara works</a>
+            <a href="#contact" style="color:rgba(255,255,255,0.85)">Contact us</a>
+          </div>
+        </div>
+        </div>
+
+        <div style="margin-top:120px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.14);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+          <div style="display:flex;flex-wrap:wrap;gap:40px;font-size:16px">
+            <a href="#legal" style="color:rgba(255,255,255,0.85)">Terms</a>
+            <a href="#legal" style="color:rgba(255,255,255,0.85)">Privacy Policy</a>
+            <a href="#legal" style="color:rgba(255,255,255,0.85)">Cookies</a>
+            <a href="#legal" style="color:rgba(255,255,255,0.85)">Disclosures</a>
+          </div>
+          <div style="font-size:16px;color:rgba(255,255,255,0.7)">© 2026 ijara Community Development Corp. All rights reserved.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Apply now&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { this.drawIcons(); this.countUp(); this.muteVideos(); this.watchScroll(); this.syncHeader(); this.alignMenus(); }
+  muteVideos() {
+    document.querySelectorAll('video').forEach((v) => {
+      v.muted = true; v.defaultMuted = true; v.volume = 0;
+      v.loop = true; v.setAttribute('loop', 'loop'); v.playsInline = true;
+      const p = v.play(); if (p && p.catch) p.catch(() => {});
+    });
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  alignMenus() {
+    const place = (item) => {
+      const panel = item.querySelector('.navpanel');
+      const trigger = item.querySelector('.navtrigger');
+      const row = panel && panel.offsetParent;
+      if (!panel || !trigger || !row) return;
+      const r = row.getBoundingClientRect();
+      const t = trigger.getBoundingClientRect();
+      const w = panel.offsetWidth;
+      const gutter = 32;
+      const desired = t.left - r.left;
+      const min = gutter - r.left;
+      const max = (window.innerWidth - gutter - w) - r.left;
+      panel.style.transform = '';
+      panel.style.left = Math.max(min, Math.min(desired, max)) + 'px';
+    };
+    const items = () => document.querySelectorAll('.navitem');
+    const bind = () => {
+      const list = items();
+      if (!list.length) { setTimeout(bind, 300); return; }
+      list.forEach((item) => {
+        if (item.dataset.aligned) return;
+        item.dataset.aligned = '1';
+        item.addEventListener('mouseenter', () => place(item));
+      });
+      window.addEventListener('resize', () => items().forEach(place), { passive: true });
+    };
+    bind();
+  }
+  syncHeader() {
+    const apply = () => {
+      const h = document.getElementById('site-header');
+      if (!h) return;
+      document.documentElement.style.setProperty('--hdr-bottom', (h.getBoundingClientRect().bottom + 8) + 'px');
+    };
+    apply();
+    window.addEventListener('resize', apply, { passive: true });
+    window.addEventListener('scroll', apply, { passive: true });
+    for (let i = 1; i <= 6; i++) setTimeout(apply, i * 400);
+  }
+  watchScroll() {
+    if (this._onScroll) return;
+    this._onScroll = () => {
+      const h = document.getElementById('site-header');
+      if (h) h.classList.toggle('stuck', (window.scrollY || document.documentElement.scrollTop || 0) > 40);
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+    for (let i = 1; i <= 6; i++) setTimeout(this._onScroll, i * 400);
+  }
+  track(v, min, max) {
+    const k = Math.max(0, Math.min(100, (((parseFloat(v) || 0) - min) / (max - min)) * 100));
+    const stop = 'calc(' + k + '% + ' + ((0.5 - k / 100) * 20).toFixed(2) + 'px)';
+    return 'linear-gradient(90deg, var(--brand-green) 0%, var(--brand-green-dark) ' + stop + ', var(--slate-200) ' + stop + ', var(--slate-200) 100%)';
+  }
+  calcPayment() {
+    const P = parseFloat(this.state.calcAmount) || 0;
+    const yrs = parseFloat(this.state.calcTerm) || 0;
+    const rate = parseFloat(this.state.calcRate) || 0;
+    const n = Math.round(yrs * 12);
+    if (!P || n < 1) return '$0.00';
+    const i = rate / 100 / 12;
+    const pay = i === 0 ? P / n : (P * i) / (1 - Math.pow(1 + i, -n));
+    return '$' + pay.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  countUp(tries = 0) {
+    const els = Array.prototype.slice.call(document.querySelectorAll('[data-count-to]'));
+    if (!els.length) { if (tries < 30) setTimeout(() => this.countUp(tries + 1), 200); return; }
+    const dur = 1600, t0 = performance.now();
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur);
+      const e = 1 - Math.pow(1 - k, 3);
+      els.forEach((el) => {
+        const to = parseFloat(el.getAttribute('data-count-to'));
+        const dec = parseInt(el.getAttribute('data-count-dec'), 10) || 0;
+        el.textContent = (to * e).toFixed(dec);
+      });
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  watchStats(tries = 0) {
+    const el = this._statsEl || document.querySelector('[data-stats-row]');
+    if (!el) {
+      if (tries < 25) { setTimeout(() => this.watchStats(tries + 1), 200); return; }
+      this.runStats();
+      return;
+    }
+    if (this._io) return;
+    const start = () => { if (this._io) { this._io.disconnect(); this._io = null; } this.runStats(); };
+    const r = el.getBoundingClientRect();
+    if (r.top < (window.innerHeight || 0) && r.bottom > 0) { start(); return; }
+    this._io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) start();
+    }, { threshold: 0.15 });
+    this._io.observe(el);
+    setTimeout(() => this.runStats(), 6000);
+  }
+  runStats() {
+    if (this._statsRan) return;
+    this._statsRan = true;
+    const dur = 1600, t0 = performance.now();
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur);
+      const e = 1 - Math.pow(1 - k, 3);
+      this.setState({ statK: e });
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  componentDidUpdate() { this.drawIcons(); this.muteVideos(); }
+  drawIcons(tries = 0) {
+    if (window.lucide && window.lucide.createIcons) {
+      try { window.lucide.createIcons(); } catch (e) {}
+      return;
+    }
+    if (tries < 40) setTimeout(() => this.drawIcons(tries + 1), 150);
+  }
+  state = { howSel: 0, progSel: 1, statK: 0, calcAmount: 450000, calcTerm: 15, calcRate: 7.625, calcCountry: 'US' };
+  countUp() {
+    if (this._counted) return;
+    const root = document.querySelector('[data-count-root]');
+    if (!root) { setTimeout(() => this.countUp(), 300); return; }
+    const visible = () => {
+      const r = root.getBoundingClientRect();
+      return r.height > 0 && r.top < (window.innerHeight || 0) * 0.9 && r.bottom > 0;
+    };
+    const run = () => {
+      if (this._counted) return;
+      this._counted = true;
+      const t0 = performance.now(), dur = 1400;
+      const tick = (now) => {
+        const k = Math.min(1, (now - t0) / dur);
+        const e = 1 - Math.pow(1 - k, 3);
+        this.setState({
+          nYears: Math.round(20 * e),
+          nFamilies: Math.round(1000 * e).toLocaleString('en-US'),
+          nGrant: (2.5 * e).toFixed(1),
+          nHalal: Math.round(100 * e)
+        });
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const check = () => {
+      if (this._counted) { window.removeEventListener('scroll', check); return; }
+      if (visible()) { run(); window.removeEventListener('scroll', check); }
+    };
+    window.addEventListener('scroll', check, { passive: true });
+    check();
+    for (let i = 1; i <= 8; i++) setTimeout(check, i * 500);
+  }
+  renderVals() {
+    const sel0 = this.state.howSel;
+    const P = this.programs(), n = P.length, sel = this.state.progSel;
+    const pick = (i) => () => this.setState({ howSel: i });
+    const row = (i) => ({
+      active: sel0 === i,
+      onClick: pick(i),
+      color: sel0 === i ? 'var(--brand-green-dark)' : 'var(--color-text)'
+    });
+    return {
+      yes: true,
+      nYears: this.state.nYears ?? 20,
+      nFamilies: this.state.nFamilies ?? '1,000',
+      nGrant: this.state.nGrant ?? '2.5',
+      nHalal: this.state.nHalal ?? 100,
+      ctaLabel: this.props.ctaLabel ?? 'Apply now',
+      isUS: this.state.calcCountry !== 'CA',
+      isCA: this.state.calcCountry === 'CA',
+      pickUS: () => this.setState({ calcCountry: 'US' }),
+      pickCA: () => this.setState({ calcCountry: 'CA' }),
+      calcAmount: this.state.calcAmount,
+      calcTerm: this.state.calcTerm,
+      calcRate: this.state.calcRate,
+      calcPayment: this.calcPayment(),
+      amountTrack: this.track(this.state.calcAmount, 50000, 2000000),
+      termTrack: this.track(this.state.calcTerm, 1, 30),
+      rateTrack: this.track(this.state.calcRate, 0, 15),
+      calcAmountLabel: '$' + (parseFloat(this.state.calcAmount) || 0).toLocaleString('en-US'),
+      calcTermLabel: (parseFloat(this.state.calcTerm) || 0) + ' years',
+      calcRateLabel: (parseFloat(this.state.calcRate) || 0).toFixed(3) + '%',
+      onAmount: (e) => this.setState({ calcAmount: e.target.value }),
+      onTerm: (e) => this.setState({ calcTerm: e.target.value }),
+      onRate: (e) => this.setState({ calcRate: e.target.value }),
+      statsRef: (el) => { this._statsEl = el; },
+      statYears: String(Math.round(20 * this.state.statK)),
+      statPrograms: String(Math.round(6 * this.state.statK)),
+      statGrant: (3.5 * this.state.statK).toFixed(1),
+      statUsda: String(Math.round(100 * this.state.statK)),
+      showStatement: sel0 === 0,
+      showEstimator: sel0 === 1,
+      showSchedule: sel0 === 2,
+      selStatement: row(0), selEstimator: row(1), selSchedule: row(2),
+      progCur: this.withBg(P[sel]), progPrev: this.withBg(P[(sel + n - 1) % n]), progNext: this.withBg(P[(sel + 1) % n]),
+      goPrev: () => this.setState({ progSel: (sel + n - 1) % n }),
+      goNext: () => this.setState({ progSel: (sel + 1) % n }),
+      progCols: [0,1,2,3,4].map(i => i === this.state.progSel ? '2.6fr' : '1fr').join(' '),
+      prog0: this.progRow(0), prog1: this.progRow(1), prog2: this.progRow(2),
+      prog3: this.progRow(3), prog4: this.progRow(4)
+    };
+  }
+  withBg(p) {
+    return Object.assign({}, p, { bg: 'url("' + p.src + '")' });
+  }
+  programs() {
+    const ph = (id) => 'https://images.pexels.com/photos/' + id + '/pexels-photo-' + id + '.jpeg?auto=compress&cs=tinysrgb&w=1600';
+    return [
+      { eyebrow: 'Residential', title: 'Finance the home you live in', body: 'Riba-free financing for a primary residence, structured as co-ownership rather than an interest-bearing loan.', cta: 'Explore residential', src: ph(1396132) },
+      { eyebrow: 'Commercial', title: 'Finance business property', body: 'The same Sharia-compliant structure applied to offices, retail units and other commercial premises.', cta: 'Explore commercial', src: ph(323780) },
+      { eyebrow: 'Auto Conversion', title: 'Convert an auto loan', body: 'Move an existing interest-bearing auto loan onto a riba-free footing.', cta: 'Explore auto conversion', src: ph(164634) },
+      { eyebrow: 'Residential Conversion', title: 'Convert your mortgage', body: 'Replace a conventional interest-bearing mortgage with an ijara co-ownership agreement.', cta: 'Explore conversion', src: ph(3760067) },
+      { eyebrow: 'Investment Opportunities', title: 'Invest riba-free', body: 'Participate in ijara CDC investment offerings structured to keep interest out of the transaction.', cta: 'Explore investing', src: ph(6863183) },
+      { eyebrow: 'ijaraCDC Partner Broker', title: 'Work with us as a broker', body: 'Brokers can bring clients riba-free financing through the ijaraCDC partner broker program.', cta: 'Become a partner', src: ph(3184418) }
+    ];
+  }
+  progRow(i) {
+    return {
+      active: this.state.progSel === i,
+      collapsed: this.state.progSel !== i,
+      onClick: () => this.setState({ progSel: i })
+    };
+  }
+}
+</script>
+</body>
+</html>

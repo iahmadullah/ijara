@@ -1,0 +1,17 @@
+:root{
+/* Sizes — extracted type scale */
+--text-display:68px;--text-h1:52px;--text-h2:32px;--text-h3:28px;--text-h4:18px;
+--text-body-l:16px;--text-body:14px;--text-small:10px;
+
+/* Line heights (px, as measured) */
+--leading-display:68px;--leading-h1:57.2px;--leading-h2:38.4px;--leading-h3:33.6px;--leading-h4:24.3px;
+--leading-body-l:21.6px;--leading-body:20px;--leading-small:14px;
+
+/* Tracking — tight on display, near-normal below h4 */
+--tracking-display:-3.4px;--tracking-h1:-2.08px;--tracking-h2:-1.28px;--tracking-h3:-0.56px;--tracking-h4:-0.144px;
+--tracking-body:normal;--tracking-caps:0.06em;
+
+/* Weights */
+--weight-light:300;--weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;
+--weight-heading:600;--weight-body:500;
+}

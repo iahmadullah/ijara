@@ -1,0 +1,4 @@
+.claude/
+.DS_Store
+.image-slots.state.json
+node_modules/

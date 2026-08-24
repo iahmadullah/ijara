@@ -1,0 +1,15 @@
+:root{
+/* 12px base unit; the 2/4/6/8 steps come from the source's rem spacing scale */
+--space-base:12px;
+--space-2:2px;--space-4:4px;--space-6:6px;--space-8:8px;--space-12:12px;--space-16:16px;--space-20:20px;
+--space-24:24px;--space-32:32px;--space-36:36px;--space-48:48px;--space-64:64px;--space-72:72px;--space-96:96px;--space-128:128px;
+--gap-element:12px;--gap-card:24px;--gap-grid:32px;--gap-section:72px;--gap-section-lg:128px;
+--pad-card:24px;--pad-card-lg:36px;--pad-input:12px 16px;--pad-button:12px 24px;
+--container-max:1280px;--container-gutter:16px;
+--z-header:1000; /* @kind other */
+--z-dropdown:1000; /* @kind other */
+--z-overlay:996; /* @kind other */
+--z-menu:250; /* @kind other */
+--z-loader:999; /* @kind other */
+--z-sticky:100; /* @kind other */
+}
