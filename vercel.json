@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/ijara CDC Website.dc.html" },
+    { "source": "/apply", "destination": "/Apply.dc.html" }
+  ]
+}
